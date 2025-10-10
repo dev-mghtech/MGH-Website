@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   return (
     <header className="w-full border-b bg-background">
       <nav className="container mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex items-center space-x-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">M</span>
-          </div>
+          <img src={logo} alt="MGH Tech Logo" className="h-10 w-10" />
           <span className="text-xl font-semibold">MGH Tech</span>
         </div>
         
