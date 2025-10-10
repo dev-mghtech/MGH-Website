@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 const Solutions = () => {
@@ -14,8 +15,8 @@ const Solutions = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-        <div className="space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <Card className="p-8 space-y-6">
           <h3 className="text-3xl font-bold">
             Our Approach to Technology Leadership
           </h3>
@@ -35,9 +36,9 @@ const Solutions = () => {
             See more
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
-        </div>
+        </Card>
 
-        <div className="space-y-6">
+        <Card className="p-8 space-y-6">
           <h3 className="text-3xl font-bold">
             Technology leadership expands your organization's impact.
           </h3>
@@ -70,7 +71,7 @@ const Solutions = () => {
           <Button size="lg" className="w-full sm:w-auto">
             Show More Information
           </Button>
-        </div>
+        </Card>
       </div>
     </section>
   );
