@@ -1,24 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Reviews = () => {
+  const { t } = useLanguage();
+  
   const reviews = [
     {
-      name: "Sarah Johnson",
-      role: "CEO, TechStart Inc.",
-      content: "MGH Tech transformed our business with their innovative solutions. Their team's expertise and dedication exceeded all expectations.",
+      name: t("reviews.review1.name"),
+      role: t("reviews.review1.role"),
+      content: t("reviews.review1.content"),
       rating: 5,
     },
     {
-      name: "Michael Chen",
-      role: "CTO, DataFlow Systems",
-      content: "Outstanding service and support. They delivered a robust solution that scaled perfectly with our growing needs.",
+      name: t("reviews.review2.name"),
+      role: t("reviews.review2.role"),
+      content: t("reviews.review2.content"),
       rating: 5,
     },
     {
-      name: "Emily Rodriguez",
-      role: "Director of IT, GlobalCorp",
-      content: "Professional, reliable, and innovative. MGH Tech has been instrumental in our digital transformation journey.",
+      name: t("reviews.review3.name"),
+      role: t("reviews.review3.role"),
+      content: t("reviews.review3.content"),
       rating: 5,
     },
   ];
@@ -27,9 +30,9 @@ const Reviews = () => {
     <section className="w-full py-20 bg-muted/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">What Our Clients Say</h2>
+          <h2 className="text-3xl font-bold mb-4">{t("reviews.title")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it - hear from the businesses we've helped transform
+            {t("reviews.subtitle")}
           </p>
         </div>
 

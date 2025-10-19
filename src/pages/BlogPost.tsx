@@ -5,11 +5,16 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowLeft, User } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
+import { blogPostsFr } from "@/data/blogPostsFr";
+import { useLanguage } from "@/contexts/LanguageContext";
 import NotFound from "./NotFound";
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = blogPosts.find((p) => p.slug === slug);
+  const { language, t } = useLanguage();
+  const posts = language === "fr" ? blogPostsFr : blogPosts;
+  const post = posts.find((p) => p.slug === slug);
+  const prefix = language === "fr" ? "/fr" : "";
 
   if (!post) {
     return <NotFound />;
@@ -20,10 +25,10 @@ const BlogPost = () => {
       <Header />
       
       <main className="container mx-auto px-6 py-16">
-        <Link to="/blog">
+        <Link to={`${prefix}/blog`}>
           <Button variant="ghost" className="mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Blog
+            {t("blog.backToBlog")}
           </Button>
         </Link>
 
@@ -39,11 +44,11 @@ const BlogPost = () => {
             </div>
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
-              <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+              <span>{new Date(post.date).toLocaleDateString(language === "fr" ? "fr-FR" : "en-US", { month: 'long', day: 'numeric', year: 'numeric' })}</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              <span>{post.readTime}</span>
+              <span>{post.readTime} {t("blog.readTime")}</span>
             </div>
           </div>
 
@@ -61,10 +66,10 @@ const BlogPost = () => {
           />
 
           <div className="mt-12 pt-8 border-t">
-            <Link to="/blog">
+            <Link to={`${prefix}/blog`}>
               <Button>
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                View All Articles
+                {t("blog.viewAll")}
               </Button>
             </Link>
           </div>

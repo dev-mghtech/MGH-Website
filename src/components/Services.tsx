@@ -1,41 +1,54 @@
-import { Users, Building2, Briefcase } from "lucide-react";
+import { Cloud, Brain, Shield, Lightbulb } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
-      icon: Users,
-      title: "Individuals",
-      description: "Personal technology consulting and career development guidance"
+      icon: Cloud,
+      title: t("services.cloudTitle"),
+      description: t("services.cloudDesc")
     },
     {
-      icon: Building2,
-      title: "Growing Companies",
-      description: "Scalable solutions to accelerate your business growth"
+      icon: Brain,
+      title: t("services.aiTitle"),
+      description: t("services.aiDesc")
     },
     {
-      icon: Briefcase,
-      title: "Enterprise",
-      description: "Comprehensive technology transformation for large organizations"
+      icon: Shield,
+      title: t("services.securityTitle"),
+      description: t("services.securityDesc")
+    },
+    {
+      icon: Lightbulb,
+      title: t("services.consultingTitle"),
+      description: t("services.consultingDesc")
     }
   ];
 
   return (
-    <section className="container mx-auto px-6 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section id="services" className="container mx-auto px-6 py-16">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold mb-4">{t("services.title")}</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          {t("services.subtitle")}
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
             <div 
               key={index} 
-              className="flex items-start space-x-4 p-6 rounded-lg border bg-card hover:shadow-lg transition-shadow"
+              className="p-6 rounded-lg border bg-card hover:shadow-lg transition-shadow"
             >
-              <div className="flex-shrink-0">
-                <Icon className="h-6 w-6 text-muted-foreground" />
+              <div className="mb-4">
+                <Icon className="h-10 w-10 text-primary" />
               </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
-                <p className="text-muted-foreground text-sm">{service.description}</p>
-              </div>
+              <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
+              <p className="text-muted-foreground text-sm">{service.description}</p>
             </div>
           );
         })}
