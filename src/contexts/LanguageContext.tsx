@@ -45,6 +45,7 @@ const translations = {
     header: {
       services: "Services",
       solutions: "Solutions",
+      about: "About",
       blog: "Blog",
       contact: "Contact",
       login: "Log in",
@@ -149,6 +150,34 @@ const translations = {
       viewAll: "View All Articles",
       readTime: "min read",
     },
+    about: {
+      title: "About Us",
+      subtitle: "Empowering businesses through innovative technology solutions and expert consulting services",
+      story: {
+        title: "Our Story",
+        paragraph1: "Founded with a vision to bridge the gap between technology and business success, MGH Tech has been at the forefront of digital transformation. We believe that every organization, regardless of size, deserves access to world-class technology consulting and solutions.",
+        paragraph2: "Our team of experienced professionals brings together decades of expertise in software development, IT strategy, and business process optimization. We're committed to delivering personalized solutions that drive real results for our clients.",
+      },
+      values: {
+        title: "Our Values",
+        value1: {
+          title: "Client-Centric",
+          description: "Your success is our success. We prioritize understanding your unique challenges and goals to deliver tailored solutions.",
+        },
+        value2: {
+          title: "Excellence",
+          description: "We maintain the highest standards in everything we do, from code quality to customer service.",
+        },
+        value3: {
+          title: "Innovation",
+          description: "We stay ahead of technology trends to provide cutting-edge solutions that give you a competitive advantage.",
+        },
+      },
+      mission: {
+        title: "Our Mission",
+        description: "To democratize access to enterprise-level technology solutions and empower businesses to thrive in the digital age through expert consulting, innovative software development, and personalized support.",
+      },
+    },
     footer: {
       tagline: "Empowering businesses through innovative technology solutions",
       company: "Company",
@@ -169,6 +198,7 @@ const translations = {
     header: {
       services: "Services",
       solutions: "Solutions",
+      about: "À Propos",
       blog: "Blog",
       contact: "Contact",
       login: "Connexion",
@@ -272,6 +302,34 @@ const translations = {
       backToBlog: "Retour au Blog",
       viewAll: "Voir Tous les Articles",
       readTime: "min de lecture",
+    },
+    about: {
+      title: "À Propos de Nous",
+      subtitle: "Donner aux entreprises les moyens d'agir grâce à des solutions technologiques innovantes et des services de conseil experts",
+      story: {
+        title: "Notre Histoire",
+        paragraph1: "Fondée avec la vision de combler le fossé entre la technologie et le succès commercial, MGH Tech est à l'avant-garde de la transformation numérique. Nous croyons que chaque organisation, quelle que soit sa taille, mérite l'accès à des services de conseil technologique et des solutions de classe mondiale.",
+        paragraph2: "Notre équipe de professionnels expérimentés rassemble des décennies d'expertise en développement logiciel, stratégie informatique et optimisation des processus métier. Nous nous engageons à fournir des solutions personnalisées qui génèrent de vrais résultats pour nos clients.",
+      },
+      values: {
+        title: "Nos Valeurs",
+        value1: {
+          title: "Centré Client",
+          description: "Votre succès est notre succès. Nous priorisons la compréhension de vos défis et objectifs uniques pour fournir des solutions sur mesure.",
+        },
+        value2: {
+          title: "Excellence",
+          description: "Nous maintenons les plus hauts standards dans tout ce que nous faisons, de la qualité du code au service client.",
+        },
+        value3: {
+          title: "Innovation",
+          description: "Nous restons à l'avant-garde des tendances technologiques pour fournir des solutions de pointe qui vous donnent un avantage concurrentiel.",
+        },
+      },
+      mission: {
+        title: "Notre Mission",
+        description: "Démocratiser l'accès aux solutions technologiques de niveau entreprise et permettre aux entreprises de prospérer à l'ère numérique grâce à des conseils d'experts, un développement logiciel innovant et un support personnalisé.",
+      },
     },
     footer: {
       tagline: "Donner aux entreprises les moyens d'agir grâce à des solutions technologiques innovantes",

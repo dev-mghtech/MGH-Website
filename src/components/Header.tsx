@@ -24,6 +24,7 @@ const Header = () => {
         <ul className="hidden md:flex items-center space-x-8">
           <li><a href={prefix + "/#services"} className="text-foreground hover:text-primary transition-colors">{t("header.services")}</a></li>
           <li><a href={prefix + "/#solutions"} className="text-foreground hover:text-primary transition-colors">{t("header.solutions")}</a></li>
+          <li><Link to={prefix + "/about"} className="text-foreground hover:text-primary transition-colors">{t("header.about")}</Link></li>
           <li><Link to={prefix + "/blog"} className="text-foreground hover:text-primary transition-colors">{t("header.blog")}</Link></li>
           <li><a href={prefix + "/#contact"} className="text-foreground hover:text-primary transition-colors">{t("header.contact")}</a></li>
         </ul>
