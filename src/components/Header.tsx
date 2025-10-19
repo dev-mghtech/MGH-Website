@@ -1,20 +1,21 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
   return (
     <header className="w-full border-b bg-background">
       <nav className="container mx-auto flex items-center justify-between px-6 py-4">
-        <div className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <img src={logo} alt="MGH Tech Logo" className="h-10 w-10" />
           <span className="text-xl font-semibold">MGH Tech</span>
-        </div>
+        </Link>
         
         <ul className="hidden md:flex items-center space-x-8">
-          <li><a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a></li>
-          <li><a href="#solutions" className="text-foreground hover:text-primary transition-colors">Solutions</a></li>
-          <li><a href="#about" className="text-foreground hover:text-primary transition-colors">About</a></li>
-          <li><a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a></li>
+          <li><a href="/#services" className="text-foreground hover:text-primary transition-colors">Services</a></li>
+          <li><a href="/#solutions" className="text-foreground hover:text-primary transition-colors">Solutions</a></li>
+          <li><Link to="/blog" className="text-foreground hover:text-primary transition-colors">Blog</Link></li>
+          <li><a href="/#contact" className="text-foreground hover:text-primary transition-colors">Contact</a></li>
         </ul>
         
         <div className="flex items-center space-x-3">
