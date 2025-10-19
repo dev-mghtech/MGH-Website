@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useToast } from "@/hooks/use-toast";
 import entrepreneurChar from "@/assets/character-entrepreneur.png";
 import growingChar from "@/assets/character-growing.png";
 import enterpriseChar from "@/assets/character-enterprise.png";
@@ -11,27 +14,44 @@ import growthStageChar from "@/assets/character-growth-stage.png";
 import ctoChar from "@/assets/character-cto.png";
 import sparkleChar from "@/assets/character-sparkle.png";
 
+type Message = {
+  type: "bot" | "user";
+  content: string;
+  character?: string;
+};
+
 const InteractiveQuestionnaire = () => {
   const { t } = useLanguage();
-  const [step, setStep] = useState(1);
+  const { toast } = useToast();
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [step, setStep] = useState(0);
   const [selection1, setSelection1] = useState("");
   const [selection2, setSelection2] = useState("");
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({ name: "", business: "", email: "" });
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const handleStep1 = (value: string) => {
-    setSelection1(value);
-    setTimeout(() => setStep(2), 300);
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleStep2 = (value: string) => {
-    setSelection2(value);
-    setTimeout(() => setStep(3), 300);
-  };
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
-  const reset = () => {
-    setStep(1);
-    setSelection1("");
-    setSelection2("");
-  };
+  useEffect(() => {
+    // Initial greeting
+    setTimeout(() => {
+      setMessages([{ type: "bot", content: t("questionnaire.greeting"), character: sparkleChar }]);
+      setTimeout(() => {
+        setMessages((prev) => [
+          ...prev,
+          { type: "bot", content: t("questionnaire.step1.question"), character: sparkleChar },
+        ]);
+        setStep(1);
+      }, 800);
+    }, 300);
+  }, []);
 
   const getCharacter = (option: string) => {
     const characters: Record<string, string> = {
@@ -46,125 +66,214 @@ const InteractiveQuestionnaire = () => {
     return characters[option] || sparkleChar;
   };
 
+  const handleStep1 = (key: string, label: string) => {
+    setSelection1(key);
+    setMessages((prev) => [...prev, { type: "user", content: label, character: getCharacter(key) }]);
+    setStep(0);
+    
+    setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        { type: "bot", content: t("questionnaire.step2.question"), character: sparkleChar },
+      ]);
+      setStep(2);
+    }, 600);
+  };
+
+  const handleStep2 = (key: string, label: string) => {
+    setSelection2(key);
+    setMessages((prev) => [...prev, { type: "user", content: label, character: getCharacter(key) }]);
+    setStep(0);
+    
+    setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        { type: "bot", content: t("questionnaire.step3.question"), character: sparkleChar },
+      ]);
+      setStep(3);
+    }, 600);
+  };
+
+  const handleDiscoveryCall = (wantsCall: boolean) => {
+    const response = wantsCall ? t("questionnaire.step3.yes") : t("questionnaire.step3.no");
+    setMessages((prev) => [...prev, { type: "user", content: response }]);
+    setStep(0);
+    
+    if (wantsCall) {
+      setTimeout(() => {
+        setShowForm(true);
+        setMessages((prev) => [
+          ...prev,
+          { type: "bot", content: t("questionnaire.form.title"), character: sparkleChar },
+        ]);
+      }, 600);
+    } else {
+      setTimeout(() => {
+        setMessages((prev) => [
+          ...prev,
+          { type: "bot", content: t("questionnaire.result.title"), character: sparkleChar },
+        ]);
+        setStep(4);
+      }, 600);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.business) {
+      toast({
+        title: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setShowForm(false);
+    setMessages((prev) => [
+      ...prev,
+      { type: "bot", content: t("questionnaire.form.success"), character: sparkleChar },
+    ]);
+    setStep(4);
+    
+    console.log("Form submitted:", { ...formData, selection1, selection2 });
+  };
+
+  const reset = () => {
+    setMessages([]);
+    setStep(0);
+    setSelection1("");
+    setSelection2("");
+    setShowForm(false);
+    setFormData({ name: "", business: "", email: "" });
+    
+    setTimeout(() => {
+      setMessages([{ type: "bot", content: t("questionnaire.greeting"), character: sparkleChar }]);
+      setTimeout(() => {
+        setMessages((prev) => [
+          ...prev,
+          { type: "bot", content: t("questionnaire.step1.question"), character: sparkleChar },
+        ]);
+        setStep(1);
+      }, 800);
+    }, 300);
+  };
+
   return (
-    <div className="relative">
-      <Card className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20 shadow-xl">
-        {step === 1 && (
-          <div className="space-y-6 animate-fade-in">
-            <div className="text-center space-y-2">
-              <img src={sparkleChar} alt="Welcome" className="w-24 h-24 mx-auto animate-bounce" />
-              <h3 className="text-2xl font-bold">{t("questionnaire.step1.question")}</h3>
-            </div>
-            <div className="grid gap-4">
-              {Object.entries(t("questionnaire.step1.options")).map(([key, label]) => {
-                const character = getCharacter(key);
-                return (
-                  <Button
-                    key={key}
-                    onClick={() => handleStep1(key)}
-                    variant="outline"
-                    size="lg"
-                    className="h-auto py-4 group hover:scale-105 transition-all duration-300 hover:border-primary hover:bg-primary/5"
-                  >
-                    <img src={character} alt={label as string} className="w-12 h-12 mr-3 group-hover:scale-110 transition-transform" />
-                    <span className="text-lg">{label}</span>
-                  </Button>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
-        {step === 2 && (
-          <div className="space-y-6 animate-fade-in">
-            <div className="text-center space-y-2">
-              <img src={getCharacter(selection1)} alt="Your selection" className="w-20 h-20 mx-auto" />
-              <h3 className="text-2xl font-bold">{t("questionnaire.step2.question")}</h3>
-            </div>
-            <div className="grid gap-4">
-              {Object.entries(t("questionnaire.step2.options")).map(([key, label]) => {
-                const character = getCharacter(key);
-                return (
-                  <Button
-                    key={key}
-                    onClick={() => handleStep2(key)}
-                    variant="outline"
-                    size="lg"
-                    className="h-auto py-4 group hover:scale-105 transition-all duration-300 hover:border-primary hover:bg-primary/5"
-                  >
-                    <img src={character} alt={label as string} className="w-12 h-12 mr-3 group-hover:scale-110 transition-transform" />
-                    <span className="text-lg">{label}</span>
-                  </Button>
-                );
-              })}
-            </div>
-            <Button
-              onClick={reset}
-              variant="ghost"
-              className="w-full"
+    <Card className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20 shadow-xl">
+      <div className="h-[500px] flex flex-col">
+        <div className="flex-1 overflow-y-auto mb-4 space-y-4 pr-2">
+          {messages.map((msg, idx) => (
+            <div
+              key={idx}
+              className={`flex gap-3 animate-fade-in ${msg.type === "user" ? "flex-row-reverse" : ""}`}
             >
-              ← {t("questionnaire.result.reset")}
-            </Button>
-          </div>
-        )}
-
-        {step === 3 && (
-          <div className="space-y-6 animate-scale-in">
-            <div className="text-center space-y-4">
-              <div className="relative">
-                <img src={sparkleChar} alt="Success" className="w-24 h-24 mx-auto animate-pulse" />
-              </div>
-              <h3 className="text-3xl font-bold text-primary">{t("questionnaire.result.title")}</h3>
-              <p className="text-muted-foreground">{t("questionnaire.result.description")}</p>
-            </div>
-            
-            <Card className="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 border-primary/30">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <img src={getCharacter(selection1)} alt="" className="w-12 h-12" />
-                  <span className="font-semibold">
-                    {t(`questionnaire.step1.options.${selection1}`)}
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <img src={getCharacter(selection2)} alt="" className="w-12 h-12" />
-                  <span className="font-semibold">
-                    {t(`questionnaire.step2.options.${selection2}`)}
-                  </span>
-                </div>
-              </div>
-            </Card>
-
-            <div className="flex flex-col gap-3">
-              <Button size="lg" className="w-full group">
-                {t("questionnaire.result.cta")}
-                <img src={earlyStageChar} alt="" className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform inline-block" />
-              </Button>
-              <Button
-                onClick={reset}
-                variant="outline"
-                size="lg"
-                className="w-full"
+              {msg.character && (
+                <img
+                  src={msg.character}
+                  alt=""
+                  className={`w-10 h-10 flex-shrink-0 ${msg.type === "bot" ? "animate-bounce" : ""}`}
+                />
+              )}
+              <div
+                className={`rounded-2xl px-4 py-3 max-w-[80%] ${
+                  msg.type === "bot"
+                    ? "bg-muted text-foreground"
+                    : "bg-primary text-primary-foreground ml-auto"
+                }`}
               >
-                {t("questionnaire.result.reset")}
+                <p className="text-sm">{msg.content}</p>
+              </div>
+            </div>
+          ))}
+          
+          {showForm && (
+            <form onSubmit={handleSubmit} className="space-y-4 animate-fade-in">
+              <div>
+                <Input
+                  placeholder={t("questionnaire.form.namePlaceholder")}
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="bg-background"
+                />
+              </div>
+              <div>
+                <Textarea
+                  placeholder={t("questionnaire.form.businessPlaceholder")}
+                  value={formData.business}
+                  onChange={(e) => setFormData({ ...formData, business: e.target.value })}
+                  className="bg-background min-h-[80px]"
+                />
+              </div>
+              <div>
+                <Input
+                  type="email"
+                  placeholder={t("questionnaire.form.emailPlaceholder")}
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="bg-background"
+                />
+              </div>
+              <Button type="submit" className="w-full">
+                {t("questionnaire.form.submit")}
+              </Button>
+            </form>
+          )}
+          
+          <div ref={messagesEndRef} />
+        </div>
+
+        <div className="space-y-2">
+          {step === 1 && (
+            <div className="grid grid-cols-1 gap-2 animate-fade-in">
+              {Object.entries(t("questionnaire.step1.options")).map(([key, label]) => (
+                <Button
+                  key={key}
+                  onClick={() => handleStep1(key, label as string)}
+                  variant="outline"
+                  className="justify-start gap-3 hover:scale-105 transition-all"
+                >
+                  <img src={getCharacter(key)} alt="" className="w-8 h-8" />
+                  <span>{label}</span>
+                </Button>
+              ))}
+            </div>
+          )}
+
+          {step === 2 && (
+            <div className="grid grid-cols-1 gap-2 animate-fade-in">
+              {Object.entries(t("questionnaire.step2.options")).map(([key, label]) => (
+                <Button
+                  key={key}
+                  onClick={() => handleStep2(key, label as string)}
+                  variant="outline"
+                  className="justify-start gap-3 hover:scale-105 transition-all"
+                >
+                  <img src={getCharacter(key)} alt="" className="w-8 h-8" />
+                  <span>{label}</span>
+                </Button>
+              ))}
+            </div>
+          )}
+
+          {step === 3 && (
+            <div className="grid grid-cols-2 gap-2 animate-fade-in">
+              <Button onClick={() => handleDiscoveryCall(true)} className="w-full">
+                {t("questionnaire.step3.yes")}
+              </Button>
+              <Button onClick={() => handleDiscoveryCall(false)} variant="outline" className="w-full">
+                {t("questionnaire.step3.no")}
               </Button>
             </div>
-          </div>
-        )}
-      </Card>
-      
-      {/* Progress indicator */}
-      <div className="flex gap-2 justify-center mt-4">
-        {[1, 2, 3].map((s) => (
-          <div
-            key={s}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              s === step ? "w-8 bg-primary" : "w-2 bg-primary/30"
-            }`}
-          />
-        ))}
+          )}
+
+          {step === 4 && (
+            <Button onClick={reset} variant="outline" className="w-full animate-fade-in">
+              {t("questionnaire.result.reset")}
+            </Button>
+          )}
+        </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

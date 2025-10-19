@@ -78,6 +78,7 @@ const translations = {
       card2Desc: "Build scalable, secure applications tailored to your unique business needs with our experienced development team.",
     },
     questionnaire: {
+      greeting: "Hi there! 👋 I'm here to help you find the perfect solution for your business.",
       step1: {
         question: "What best describes your business?",
         options: {
@@ -87,7 +88,7 @@ const translations = {
         },
       },
       step2: {
-        question: "What service are you looking for?",
+        question: "Great! What service are you looking for?",
         options: {
           discovery: "Discovery Phase Services",
           earlyStage: "For Early-Stage Startups",
@@ -95,10 +96,25 @@ const translations = {
           cto: "CTO as a Service",
         },
       },
+      step3: {
+        question: "Perfect! Would you like a free 15-minute discovery call to discuss how we can help?",
+        yes: "Yes, I'd love to!",
+        no: "No, thanks",
+      },
+      form: {
+        title: "Great! Please share your details:",
+        name: "Your Name",
+        namePlaceholder: "John Doe",
+        business: "Business Description",
+        businessPlaceholder: "Tell us about your business...",
+        email: "Email Address",
+        emailPlaceholder: "john@example.com",
+        submit: "Schedule Discovery Call",
+        success: "Thank you! We'll be in touch soon.",
+      },
       result: {
-        title: "Perfect Match!",
-        description: "Based on your selection, we recommend:",
-        cta: "Get Started",
+        title: "Thanks for your interest!",
+        description: "Based on your selection:",
         reset: "Start Over",
       },
     },
@@ -181,6 +197,7 @@ const translations = {
       card2Desc: "Créez des applications évolutives et sécurisées adaptées à vos besoins commerciaux uniques avec notre équipe de développement expérimentée.",
     },
     questionnaire: {
+      greeting: "Bonjour! 👋 Je suis là pour vous aider à trouver la solution parfaite pour votre entreprise.",
       step1: {
         question: "Qu'est-ce qui décrit le mieux votre entreprise?",
         options: {
@@ -190,7 +207,7 @@ const translations = {
         },
       },
       step2: {
-        question: "Quel service recherchez-vous?",
+        question: "Excellent! Quel service recherchez-vous?",
         options: {
           discovery: "Services de Phase de Découverte",
           earlyStage: "Pour Startups en Phase Initiale",
@@ -198,10 +215,25 @@ const translations = {
           cto: "CTO en tant que Service",
         },
       },
+      step3: {
+        question: "Parfait! Souhaitez-vous un appel découverte gratuit de 15 minutes pour discuter de comment nous pouvons vous aider?",
+        yes: "Oui, avec plaisir!",
+        no: "Non, merci",
+      },
+      form: {
+        title: "Excellent! Partagez vos coordonnées:",
+        name: "Votre Nom",
+        namePlaceholder: "Jean Dupont",
+        business: "Description de l'Entreprise",
+        businessPlaceholder: "Parlez-nous de votre entreprise...",
+        email: "Adresse Email",
+        emailPlaceholder: "jean@exemple.com",
+        submit: "Planifier l'Appel Découverte",
+        success: "Merci! Nous vous contacterons bientôt.",
+      },
       result: {
-        title: "Correspondance Parfaite!",
-        description: "Selon votre sélection, nous recommandons:",
-        cta: "Commencer",
+        title: "Merci de votre intérêt!",
+        description: "Selon votre sélection:",
         reset: "Recommencer",
       },
     },
