@@ -16,17 +16,17 @@ const Solutions = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <Card className="p-8 space-y-6">
-          <h3 className="text-3xl font-bold">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <Card className="p-6 space-y-4 flex flex-col">
+          <h3 className="text-2xl font-bold">
             {t("solutions.discoveryTitle")}
           </h3>
           
-          <div className="space-y-4">
-            <p className="text-muted-foreground">
+          <div className="space-y-3 flex-grow">
+            <p className="text-muted-foreground text-sm">
               {t("solutions.discoveryDesc")}
             </p>
-            <ul className="space-y-2 text-muted-foreground">
+            <ul className="space-y-1.5 text-muted-foreground text-sm">
               <li>• {t("solutions.discoveryPoint1")}</li>
               <li>• {t("solutions.discoveryPoint2")}</li>
               <li>• {t("solutions.discoveryPoint3")}</li>
@@ -35,57 +35,57 @@ const Solutions = () => {
             <p className="text-sm font-medium pt-2">
               {t("solutions.discoveryWho")}
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs text-muted-foreground">
               {t("solutions.discoveryWhoDesc")}
             </p>
           </div>
           
-          <Button variant="outline" size="lg" className="group">
+          <Button variant="outline" size="sm" className="group w-full">
             {t("header.contact")}
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </Card>
 
-        <Card className="p-8 space-y-6">
-          <h3 className="text-3xl font-bold">
+        <Card className="p-6 space-y-4 flex flex-col">
+          <h3 className="text-2xl font-bold">
             {t("solutions.ctoTitle")}
           </h3>
           
-          <div className="space-y-4">
-            <p className="text-muted-foreground font-medium">
+          <div className="space-y-3 flex-grow">
+            <p className="text-muted-foreground font-medium text-sm">
               {t("solutions.ctoSubtitle")}
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               {t("solutions.ctoDesc")}
             </p>
           </div>
           
-          <Button size="lg" className="w-full sm:w-auto">
+          <Button size="sm" className="w-full">
             {t("header.contact")}
           </Button>
         </Card>
 
-        <Card className="p-8 space-y-6 lg:col-span-2">
-          <h3 className="text-3xl font-bold">
+        <Card className="p-6 space-y-4 flex flex-col">
+          <h3 className="text-2xl font-bold">
             {t("solutions.softwareTitle")}
           </h3>
           
-          <div className="space-y-4">
-            <p className="text-muted-foreground font-medium">
+          <div className="space-y-3 flex-grow">
+            <p className="text-muted-foreground font-medium text-sm">
               {t("solutions.softwareSubtitle")}
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               {t("solutions.softwareDesc")}
             </p>
             <p className="text-sm font-medium pt-2">
               {t("solutions.softwareWho")}
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs text-muted-foreground">
               {t("solutions.softwareWhoDesc")}
             </p>
           </div>
           
-          <Button size="lg" className="w-full sm:w-auto">
+          <Button size="sm" className="w-full">
             {t("header.contact")}
           </Button>
         </Card>
