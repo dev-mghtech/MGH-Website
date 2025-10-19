@@ -5,6 +5,7 @@ import Clients from "@/components/Clients";
 import Solutions from "@/components/Solutions";
 import Reviews from "@/components/Reviews";
 import Footer from "@/components/Footer";
+import FloatingChatButton from "@/components/FloatingChatButton";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Solutions />
       <Reviews />
       <Footer />
+      <FloatingChatButton />
     </div>
   );
 };

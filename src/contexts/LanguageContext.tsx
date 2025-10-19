@@ -56,6 +56,11 @@ const translations = {
       subtitle: "Our expert technology consulting solutions drive innovation, optimize operations, and accelerate digital transformation for businesses of all sizes.",
       cta: "Start Your Journey",
       contact: "Contact Us",
+      audience: {
+        entrepreneur: "Entrepreneurs",
+        manufacturing: "Manufacturing",
+        marketing: "Marketing Agencies",
+      },
     },
     services: {
       individualsTitle: "Individuals",
@@ -175,6 +180,11 @@ const translations = {
       subtitle: "Nos solutions expertes de conseil technologique stimulent l'innovation, optimisent les opérations et accélèrent la transformation numérique pour les entreprises de toutes tailles.",
       cta: "Commencez Votre Parcours",
       contact: "Contactez-Nous",
+      audience: {
+        entrepreneur: "Entrepreneurs",
+        manufacturing: "Fabrication",
+        marketing: "Agences Marketing",
+      },
     },
     services: {
       individualsTitle: "Particuliers",

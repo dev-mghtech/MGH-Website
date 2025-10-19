@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import InteractiveQuestionnaire from "@/components/InteractiveQuestionnaire";
+import heroEntrepreneur from "@/assets/hero-entrepreneur.png";
+import heroManufacturing from "@/assets/hero-manufacturing.png";
+import heroMarketing from "@/assets/hero-marketing.png";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -33,7 +35,44 @@ const Hero = () => {
         </div>
         
         <div className="relative">
-          <InteractiveQuestionnaire />
+          <div className="grid grid-cols-3 gap-6">
+            <div className="group">
+              <div className="relative overflow-hidden rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
+                <img
+                  src={heroEntrepreneur}
+                  alt="Entrepreneur"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <p className="text-center mt-3 text-sm font-medium text-muted-foreground">
+                {t("hero.audience.entrepreneur")}
+              </p>
+            </div>
+            <div className="group">
+              <div className="relative overflow-hidden rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
+                <img
+                  src={heroManufacturing}
+                  alt="Manufacturing"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <p className="text-center mt-3 text-sm font-medium text-muted-foreground">
+                {t("hero.audience.manufacturing")}
+              </p>
+            </div>
+            <div className="group">
+              <div className="relative overflow-hidden rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
+                <img
+                  src={heroMarketing}
+                  alt="Marketing Agency"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <p className="text-center mt-3 text-sm font-medium text-muted-foreground">
+                {t("hero.audience.marketing")}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
