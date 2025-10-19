@@ -1,4 +1,4 @@
-import { Search, UserCog, Code } from "lucide-react";
+import { Users, Building2, Briefcase } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
@@ -6,19 +6,19 @@ const Services = () => {
   
   const services = [
     {
-      icon: Search,
-      title: t("services.discoveryTitle"),
-      description: t("services.discoveryDesc")
+      icon: Users,
+      title: t("services.individualsTitle"),
+      description: t("services.individualsDesc")
     },
     {
-      icon: UserCog,
-      title: t("services.ctoTitle"),
-      description: t("services.ctoDesc")
+      icon: Building2,
+      title: t("services.growingTitle"),
+      description: t("services.growingDesc")
     },
     {
-      icon: Code,
-      title: t("services.softwareTitle"),
-      description: t("services.softwareDesc")
+      icon: Briefcase,
+      title: t("services.enterpriseTitle"),
+      description: t("services.enterpriseDesc")
     }
   ];
 
