@@ -35,40 +35,49 @@ const Hero = () => {
         </div>
         
         <div className="relative">
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             <div className="group">
-              <div className="relative overflow-hidden rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
-                <img
-                  src={heroEntrepreneur}
-                  alt="Entrepreneur"
-                  className="w-full h-auto object-cover"
-                />
+              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="aspect-square bg-gradient-to-br from-primary/5 to-secondary/5">
+                  <img
+                    src={heroEntrepreneur}
+                    alt="Entrepreneur"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <p className="text-center mt-3 text-sm font-medium text-muted-foreground">
+              <p className="text-center mt-4 text-base font-semibold text-foreground">
                 {t("hero.audience.entrepreneur")}
               </p>
             </div>
             <div className="group">
-              <div className="relative overflow-hidden rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
-                <img
-                  src={heroManufacturing}
-                  alt="Manufacturing"
-                  className="w-full h-auto object-cover"
-                />
+              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="aspect-square bg-gradient-to-br from-primary/5 to-secondary/5">
+                  <img
+                    src={heroManufacturing}
+                    alt="Manufacturing"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <p className="text-center mt-3 text-sm font-medium text-muted-foreground">
+              <p className="text-center mt-4 text-base font-semibold text-foreground">
                 {t("hero.audience.manufacturing")}
               </p>
             </div>
             <div className="group">
-              <div className="relative overflow-hidden rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
-                <img
-                  src={heroMarketing}
-                  alt="Marketing Agency"
-                  className="w-full h-auto object-cover"
-                />
+              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="aspect-square bg-gradient-to-br from-primary/5 to-secondary/5">
+                  <img
+                    src={heroMarketing}
+                    alt="Marketing Agency"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <p className="text-center mt-3 text-sm font-medium text-muted-foreground">
+              <p className="text-center mt-4 text-base font-semibold text-foreground">
                 {t("hero.audience.marketing")}
               </p>
             </div>
