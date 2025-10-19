@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Sparkles, Rocket, Building2, Users, Lightbulb, TrendingUp, Shield } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import entrepreneurChar from "@/assets/character-entrepreneur.png";
+import growingChar from "@/assets/character-growing.png";
+import enterpriseChar from "@/assets/character-enterprise.png";
+import discoveryChar from "@/assets/character-discovery.png";
+import earlyStageChar from "@/assets/character-early-stage.png";
+import growthStageChar from "@/assets/character-growth-stage.png";
+import ctoChar from "@/assets/character-cto.png";
+import sparkleChar from "@/assets/character-sparkle.png";
 
 const InteractiveQuestionnaire = () => {
   const { t } = useLanguage();
@@ -26,17 +33,17 @@ const InteractiveQuestionnaire = () => {
     setSelection2("");
   };
 
-  const getIcon = (option: string) => {
-    const icons: Record<string, any> = {
-      entrepreneur: Sparkles,
-      growing: TrendingUp,
-      enterprise: Building2,
-      discovery: Lightbulb,
-      earlyStage: Rocket,
-      growthStage: Users,
-      cto: Shield,
+  const getCharacter = (option: string) => {
+    const characters: Record<string, string> = {
+      entrepreneur: entrepreneurChar,
+      growing: growingChar,
+      enterprise: enterpriseChar,
+      discovery: discoveryChar,
+      earlyStage: earlyStageChar,
+      growthStage: growthStageChar,
+      cto: ctoChar,
     };
-    return icons[option] || Sparkles;
+    return characters[option] || sparkleChar;
   };
 
   return (
@@ -45,12 +52,12 @@ const InteractiveQuestionnaire = () => {
         {step === 1 && (
           <div className="space-y-6 animate-fade-in">
             <div className="text-center space-y-2">
-              <Sparkles className="w-12 h-12 mx-auto text-primary animate-pulse" />
+              <img src={sparkleChar} alt="Welcome" className="w-24 h-24 mx-auto animate-bounce" />
               <h3 className="text-2xl font-bold">{t("questionnaire.step1.question")}</h3>
             </div>
             <div className="grid gap-4">
               {Object.entries(t("questionnaire.step1.options")).map(([key, label]) => {
-                const Icon = getIcon(key);
+                const character = getCharacter(key);
                 return (
                   <Button
                     key={key}
@@ -59,7 +66,7 @@ const InteractiveQuestionnaire = () => {
                     size="lg"
                     className="h-auto py-4 group hover:scale-105 transition-all duration-300 hover:border-primary hover:bg-primary/5"
                   >
-                    <Icon className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
+                    <img src={character} alt={label as string} className="w-12 h-12 mr-3 group-hover:scale-110 transition-transform" />
                     <span className="text-lg">{label}</span>
                   </Button>
                 );
@@ -71,12 +78,12 @@ const InteractiveQuestionnaire = () => {
         {step === 2 && (
           <div className="space-y-6 animate-fade-in">
             <div className="text-center space-y-2">
-              <Rocket className="w-12 h-12 mx-auto text-primary animate-bounce" />
+              <img src={getCharacter(selection1)} alt="Your selection" className="w-20 h-20 mx-auto" />
               <h3 className="text-2xl font-bold">{t("questionnaire.step2.question")}</h3>
             </div>
             <div className="grid gap-4">
               {Object.entries(t("questionnaire.step2.options")).map(([key, label]) => {
-                const Icon = getIcon(key);
+                const character = getCharacter(key);
                 return (
                   <Button
                     key={key}
@@ -85,7 +92,7 @@ const InteractiveQuestionnaire = () => {
                     size="lg"
                     className="h-auto py-4 group hover:scale-105 transition-all duration-300 hover:border-primary hover:bg-primary/5"
                   >
-                    <Icon className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
+                    <img src={character} alt={label as string} className="w-12 h-12 mr-3 group-hover:scale-110 transition-transform" />
                     <span className="text-lg">{label}</span>
                   </Button>
                 );
@@ -105,10 +112,7 @@ const InteractiveQuestionnaire = () => {
           <div className="space-y-6 animate-scale-in">
             <div className="text-center space-y-4">
               <div className="relative">
-                <Sparkles className="w-16 h-16 mx-auto text-primary animate-pulse" />
-                <div className="absolute inset-0 animate-ping opacity-20">
-                  <Sparkles className="w-16 h-16 mx-auto text-primary" />
-                </div>
+                <img src={sparkleChar} alt="Success" className="w-24 h-24 mx-auto animate-pulse" />
               </div>
               <h3 className="text-3xl font-bold text-primary">{t("questionnaire.result.title")}</h3>
               <p className="text-muted-foreground">{t("questionnaire.result.description")}</p>
@@ -117,19 +121,13 @@ const InteractiveQuestionnaire = () => {
             <Card className="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 border-primary/30">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  {(() => {
-                    const Icon = getIcon(selection1);
-                    return <Icon className="w-6 h-6 text-primary" />;
-                  })()}
+                  <img src={getCharacter(selection1)} alt="" className="w-12 h-12" />
                   <span className="font-semibold">
                     {t(`questionnaire.step1.options.${selection1}`)}
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  {(() => {
-                    const Icon = getIcon(selection2);
-                    return <Icon className="w-6 h-6 text-primary" />;
-                  })()}
+                  <img src={getCharacter(selection2)} alt="" className="w-12 h-12" />
                   <span className="font-semibold">
                     {t(`questionnaire.step2.options.${selection2}`)}
                   </span>
@@ -140,7 +138,7 @@ const InteractiveQuestionnaire = () => {
             <div className="flex flex-col gap-3">
               <Button size="lg" className="w-full group">
                 {t("questionnaire.result.cta")}
-                <Rocket className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <img src={earlyStageChar} alt="" className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform inline-block" />
               </Button>
               <Button
                 onClick={reset}
