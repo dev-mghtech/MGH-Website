@@ -5,19 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
-import entrepreneurChar from "@/assets/character-entrepreneur.png";
-import growingChar from "@/assets/character-growing.png";
-import enterpriseChar from "@/assets/character-enterprise.png";
-import discoveryChar from "@/assets/character-discovery.png";
-import earlyStageChar from "@/assets/character-early-stage.png";
-import growthStageChar from "@/assets/character-growth-stage.png";
-import ctoChar from "@/assets/character-cto.png";
-import sparkleChar from "@/assets/character-sparkle.png";
+import { User } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 type Message = {
   type: "bot" | "user";
   content: string;
-  character?: string;
 };
 
 const InteractiveQuestionnaire = () => {
@@ -42,39 +35,26 @@ const InteractiveQuestionnaire = () => {
   useEffect(() => {
     // Initial greeting
     setTimeout(() => {
-      setMessages([{ type: "bot", content: t("questionnaire.greeting"), character: sparkleChar }]);
+      setMessages([{ type: "bot", content: t("questionnaire.greeting") }]);
       setTimeout(() => {
         setMessages((prev) => [
           ...prev,
-          { type: "bot", content: t("questionnaire.step1.question"), character: sparkleChar },
+          { type: "bot", content: t("questionnaire.step1.question") },
         ]);
         setStep(1);
       }, 800);
     }, 300);
   }, []);
 
-  const getCharacter = (option: string) => {
-    const characters: Record<string, string> = {
-      entrepreneur: entrepreneurChar,
-      growing: growingChar,
-      enterprise: enterpriseChar,
-      discovery: discoveryChar,
-      earlyStage: earlyStageChar,
-      growthStage: growthStageChar,
-      cto: ctoChar,
-    };
-    return characters[option] || sparkleChar;
-  };
-
   const handleStep1 = (key: string, label: string) => {
     setSelection1(key);
-    setMessages((prev) => [...prev, { type: "user", content: label, character: getCharacter(key) }]);
+    setMessages((prev) => [...prev, { type: "user", content: label }]);
     setStep(0);
     
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
-        { type: "bot", content: t("questionnaire.step2.question"), character: sparkleChar },
+        { type: "bot", content: t("questionnaire.step2.question") },
       ]);
       setStep(2);
     }, 600);
@@ -82,13 +62,13 @@ const InteractiveQuestionnaire = () => {
 
   const handleStep2 = (key: string, label: string) => {
     setSelection2(key);
-    setMessages((prev) => [...prev, { type: "user", content: label, character: getCharacter(key) }]);
+    setMessages((prev) => [...prev, { type: "user", content: label }]);
     setStep(0);
     
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
-        { type: "bot", content: t("questionnaire.step3.question"), character: sparkleChar },
+        { type: "bot", content: t("questionnaire.step3.question") },
       ]);
       setStep(3);
     }, 600);
@@ -104,14 +84,14 @@ const InteractiveQuestionnaire = () => {
         setShowForm(true);
         setMessages((prev) => [
           ...prev,
-          { type: "bot", content: t("questionnaire.form.title"), character: sparkleChar },
+          { type: "bot", content: t("questionnaire.form.title") },
         ]);
       }, 600);
     } else {
       setTimeout(() => {
         setMessages((prev) => [
           ...prev,
-          { type: "bot", content: t("questionnaire.result.title"), character: sparkleChar },
+          { type: "bot", content: t("questionnaire.result.title") },
         ]);
         setStep(4);
       }, 600);
@@ -131,7 +111,7 @@ const InteractiveQuestionnaire = () => {
     setShowForm(false);
     setMessages((prev) => [
       ...prev,
-      { type: "bot", content: t("questionnaire.form.success"), character: sparkleChar },
+      { type: "bot", content: t("questionnaire.form.success") },
     ]);
     setStep(4);
     
@@ -147,11 +127,11 @@ const InteractiveQuestionnaire = () => {
     setFormData({ name: "", business: "", email: "" });
     
     setTimeout(() => {
-      setMessages([{ type: "bot", content: t("questionnaire.greeting"), character: sparkleChar }]);
+      setMessages([{ type: "bot", content: t("questionnaire.greeting") }]);
       setTimeout(() => {
         setMessages((prev) => [
           ...prev,
-          { type: "bot", content: t("questionnaire.step1.question"), character: sparkleChar },
+          { type: "bot", content: t("questionnaire.step1.question") },
         ]);
         setStep(1);
       }, 800);
@@ -167,12 +147,16 @@ const InteractiveQuestionnaire = () => {
               key={idx}
               className={`flex gap-3 animate-fade-in ${msg.type === "user" ? "flex-row-reverse" : ""}`}
             >
-              {msg.character && (
+              {msg.type === "bot" ? (
                 <img
-                  src={msg.character}
-                  alt=""
-                  className={`w-10 h-10 flex-shrink-0 ${msg.type === "bot" ? "animate-bounce" : ""}`}
+                  src={logo}
+                  alt="MGH Tech"
+                  className="w-10 h-10 flex-shrink-0 rounded-full object-contain bg-white p-1"
                 />
+              ) : (
+                <div className="w-10 h-10 flex-shrink-0 rounded-full bg-primary/20 flex items-center justify-center">
+                  <User className="w-5 h-5 text-primary" />
+                </div>
               )}
               <div
                 className={`rounded-2xl px-4 py-3 max-w-[80%] ${
@@ -230,10 +214,9 @@ const InteractiveQuestionnaire = () => {
                   key={key}
                   onClick={() => handleStep1(key, label as string)}
                   variant="outline"
-                  className="justify-start gap-3 hover:scale-105 transition-all"
+                  className="justify-center hover:scale-105 transition-all"
                 >
-                  <img src={getCharacter(key)} alt="" className="w-8 h-8" />
-                  <span>{label}</span>
+                  {label}
                 </Button>
               ))}
             </div>
@@ -246,10 +229,9 @@ const InteractiveQuestionnaire = () => {
                   key={key}
                   onClick={() => handleStep2(key, label as string)}
                   variant="outline"
-                  className="justify-start gap-3 hover:scale-105 transition-all"
+                  className="justify-center hover:scale-105 transition-all"
                 >
-                  <img src={getCharacter(key)} alt="" className="w-8 h-8" />
-                  <span>{label}</span>
+                  {label}
                 </Button>
               ))}
             </div>
