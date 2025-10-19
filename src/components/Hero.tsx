@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroMain from "@/assets/hero-main.jpg";
-import heroSecondary from "@/assets/hero-secondary.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+import InteractiveQuestionnaire from "@/components/InteractiveQuestionnaire";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -34,22 +33,7 @@ const Hero = () => {
         </div>
         
         <div className="relative">
-          <div className="grid grid-cols-1 gap-6">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src={heroMain} 
-                alt="Tech professional presenting data analytics" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src={heroSecondary} 
-                alt="Professional business team collaboration" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
+          <InteractiveQuestionnaire />
         </div>
       </div>
     </section>

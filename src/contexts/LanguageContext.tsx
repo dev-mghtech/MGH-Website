@@ -77,6 +77,31 @@ const translations = {
       card2Title: "Custom Software Development",
       card2Desc: "Build scalable, secure applications tailored to your unique business needs with our experienced development team.",
     },
+    questionnaire: {
+      step1: {
+        question: "What best describes your business?",
+        options: {
+          entrepreneur: "Entrepreneur",
+          growing: "Growing Business",
+          enterprise: "Enterprise",
+        },
+      },
+      step2: {
+        question: "What service are you looking for?",
+        options: {
+          discovery: "Discovery Phase Services",
+          earlyStage: "For Early-Stage Startups",
+          growthStage: "For Growth-Stage Startups",
+          cto: "CTO as a Service",
+        },
+      },
+      result: {
+        title: "Perfect Match!",
+        description: "Based on your selection, we recommend:",
+        cta: "Get Started",
+        reset: "Start Over",
+      },
+    },
     reviews: {
       title: "What Our Clients Say",
       subtitle: "Don't just take our word for it - hear from the businesses we've helped transform",
@@ -154,6 +179,31 @@ const translations = {
       card1Desc: "Transformez votre entreprise avec des conseils d'experts sur la stratégie technologique, la transformation numérique et les feuilles de route d'innovation.",
       card2Title: "Développement de Logiciels Sur Mesure",
       card2Desc: "Créez des applications évolutives et sécurisées adaptées à vos besoins commerciaux uniques avec notre équipe de développement expérimentée.",
+    },
+    questionnaire: {
+      step1: {
+        question: "Qu'est-ce qui décrit le mieux votre entreprise?",
+        options: {
+          entrepreneur: "Entrepreneur",
+          growing: "Entreprise en Croissance",
+          enterprise: "Grande Entreprise",
+        },
+      },
+      step2: {
+        question: "Quel service recherchez-vous?",
+        options: {
+          discovery: "Services de Phase de Découverte",
+          earlyStage: "Pour Startups en Phase Initiale",
+          growthStage: "Pour Startups en Phase de Croissance",
+          cto: "CTO en tant que Service",
+        },
+      },
+      result: {
+        title: "Correspondance Parfaite!",
+        description: "Selon votre sélection, nous recommandons:",
+        cta: "Commencer",
+        reset: "Recommencer",
+      },
     },
     reviews: {
       title: "Ce Que Disent Nos Clients",
