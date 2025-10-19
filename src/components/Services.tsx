@@ -1,21 +1,24 @@
 import { Users, Building2, Briefcase } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: Users,
-      title: "Individuals",
-      description: "Personal technology consulting and career development guidance"
+      title: t("services.individualsTitle"),
+      description: t("services.individualsDesc")
     },
     {
       icon: Building2,
-      title: "Growing Companies",
-      description: "Scalable solutions to accelerate your business growth"
+      title: t("services.growingTitle"),
+      description: t("services.growingDesc")
     },
     {
       icon: Briefcase,
-      title: "Enterprise",
-      description: "Comprehensive technology transformation for large organizations"
+      title: t("services.enterpriseTitle"),
+      description: t("services.enterpriseDesc")
     }
   ];
 
