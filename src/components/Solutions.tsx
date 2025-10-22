@@ -58,6 +58,12 @@ const Solutions = () => {
             <p className="text-muted-foreground text-sm">
               {t("solutions.ctoDesc")}
             </p>
+            <p className="text-sm font-medium pt-2">
+              {t("solutions.ctoWho")}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {t("solutions.ctoWhoDesc")}
+            </p>
           </div>
           
           <Button size="sm" className="w-full">
