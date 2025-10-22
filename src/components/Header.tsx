@@ -19,15 +19,15 @@ const Header = () => {
       <nav className="container mx-auto flex items-center justify-between px-6 py-4 relative z-10">
         <Link to={prefix + "/"} className="flex items-center space-x-2">
           <img src={logo} alt="MGH Tech Logo" className="h-10 w-10" />
-          <span className="text-xl font-semibold">MGH Tech</span>
+          <span className="text-xl font-semibold tracking-tight">MGH Tech</span>
         </Link>
         
         <ul className="hidden md:flex items-center space-x-8">
-          <li><a href={prefix + "/#services"} className="text-foreground hover:text-primary transition-colors">{t("header.services")}</a></li>
-          <li><a href={prefix + "/#solutions"} className="text-foreground hover:text-primary transition-colors">{t("header.solutions")}</a></li>
-          <li><Link to={prefix + "/about"} className="text-foreground hover:text-primary transition-colors">{t("header.about")}</Link></li>
-          <li><Link to={prefix + "/blog"} className="text-foreground hover:text-primary transition-colors">{t("header.blog")}</Link></li>
-          <li><a href={prefix + "/#contact"} className="text-foreground hover:text-primary transition-colors">{t("header.contact")}</a></li>
+          <li><a href={prefix + "/#services"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.services")}</a></li>
+          <li><a href={prefix + "/#solutions"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.solutions")}</a></li>
+          <li><Link to={prefix + "/about"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.about")}</Link></li>
+          <li><Link to={prefix + "/blog"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.blog")}</Link></li>
+          <li><a href={prefix + "/#contact"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.contact")}</a></li>
         </ul>
         
         <div className="flex items-center space-x-3">

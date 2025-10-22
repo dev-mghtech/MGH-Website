@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Hero = () => {
   const { t } = useLanguage();
   return (
-    <section className="container mx-auto px-6 py-20 md:py-32">
+    <section className="container mx-auto px-6 py-16 md:py-24">
       <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
         {/* Badge */}
         <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-muted/50 rounded-full border border-border/50">
@@ -19,7 +19,7 @@ const Hero = () => {
         </div>
         
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.15] tracking-[-0.02em]" style={{ fontWeight: 500 }}>
           <span className="text-foreground">
             {t("hero.title").split(' ').slice(0, -2).join(' ')}{' '}
           </span>
@@ -30,14 +30,14 @@ const Hero = () => {
         
         {/* Subtitle */}
         <div className="max-w-3xl space-y-2">
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
             {t("hero.subtitle")}
           </p>
         </div>
         
         {/* CTA Button */}
         <div className="pt-4">
-          <Button size="lg" className="px-8 py-6 text-base font-semibold rounded-xl">
+          <Button size="lg" className="px-8 py-6 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-shadow">
             {t("hero.cta")}
           </Button>
         </div>

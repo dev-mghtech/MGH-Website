@@ -13,6 +13,24 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Gellix', 'Arial', 'sans-serif'],
+      },
+      letterSpacing: {
+        tighter: '-0.02em',
+        tight: '-0.01em',
+        normal: '0',
+        wide: '0.01em',
+        wider: '0.02em',
+        widest: '0.03em',
+      },
+      lineHeight: {
+        'tight': '1.1',
+        'snug': '1.25',
+        'normal': '1.5',
+        'relaxed': '1.625',
+        'loose': '1.75',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
