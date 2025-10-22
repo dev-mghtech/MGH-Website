@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Compass, UserCheck, Code } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Solutions = () => {
@@ -18,6 +18,9 @@ const Solutions = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
         <Card className="p-6 space-y-4 flex flex-col">
+          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+            <Compass className="w-6 h-6 text-primary" />
+          </div>
           <h3 className="text-2xl font-bold">
             {t("solutions.discoveryTitle")}
           </h3>
@@ -47,6 +50,9 @@ const Solutions = () => {
         </Card>
 
         <Card className="p-6 space-y-4 flex flex-col">
+          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+            <UserCheck className="w-6 h-6 text-primary" />
+          </div>
           <h3 className="text-2xl font-bold">
             {t("solutions.ctoTitle")}
           </h3>
@@ -72,6 +78,9 @@ const Solutions = () => {
         </Card>
 
         <Card className="p-6 space-y-4 flex flex-col">
+          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+            <Code className="w-6 h-6 text-primary" />
+          </div>
           <h3 className="text-2xl font-bold">
             {t("solutions.softwareTitle")}
           </h3>
