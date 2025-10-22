@@ -18,7 +18,7 @@ const Solutions = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
         <Card className="p-6 space-y-4 flex flex-col">
-          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2 mx-auto">
             <Compass className="w-6 h-6 text-primary" />
           </div>
           <h3 className="text-2xl font-bold">
@@ -50,7 +50,7 @@ const Solutions = () => {
         </Card>
 
         <Card className="p-6 space-y-4 flex flex-col">
-          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2 mx-auto">
             <UserCheck className="w-6 h-6 text-primary" />
           </div>
           <h3 className="text-2xl font-bold">
@@ -78,7 +78,7 @@ const Solutions = () => {
         </Card>
 
         <Card className="p-6 space-y-4 flex flex-col">
-          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2 mx-auto">
             <Code className="w-6 h-6 text-primary" />
           </div>
           <h3 className="text-2xl font-bold">
