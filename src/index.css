@@ -108,4 +108,24 @@ All colors MUST be HSL.
   .prose p {
     @apply mb-4 leading-7;
   }
+
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(229, 231, 235, 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(229, 231, 235, 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  @keyframes grid-flow {
+    0%, 100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 30px 30px;
+    }
+  }
+
+  .animate-grid-flow {
+    animation: grid-flow 20s ease-in-out infinite;
+  }
 }

@@ -14,8 +14,9 @@ const Header = () => {
     : "/fr" + location.pathname;
 
   return (
-    <header className="w-full border-b bg-background">
-      <nav className="container mx-auto flex items-center justify-between px-6 py-4">
+    <header className="w-full border-b bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 animate-grid-flow" />
+      <nav className="container mx-auto flex items-center justify-between px-6 py-4 relative z-10">
         <Link to={prefix + "/"} className="flex items-center space-x-2">
           <img src={logo} alt="MGH Tech Logo" className="h-10 w-10" />
           <span className="text-xl font-semibold">MGH Tech</span>
