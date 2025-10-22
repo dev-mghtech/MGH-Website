@@ -52,6 +52,11 @@ const translations = {
       login: "Log in",
       getStarted: "Get Started",
     },
+    offer: {
+      badge: "Limited Time Offer:",
+      text: "Get 20% off on all Discovery Phase Services. Book your free consultation today!",
+      cta: "Claim Offer",
+    },
     hero: {
       badge: "Technology consulting excellence",
       title: "Transforming Business through Technology",
@@ -220,6 +225,11 @@ const translations = {
       getInTouch: "Nous contacter",
       login: "Connexion",
       getStarted: "Commencer",
+    },
+    offer: {
+      badge: "Offre à Durée Limitée:",
+      text: "Obtenez 20% de réduction sur tous les Services de Phase de Découverte. Réservez votre consultation gratuite aujourd'hui!",
+      cta: "Profiter de l'Offre",
     },
     hero: {
       badge: "Excellence en conseil technologique",
