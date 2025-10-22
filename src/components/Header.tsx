@@ -36,11 +36,10 @@ const Header = () => {
               <span className="sr-only">Switch to {otherLang === "fr" ? "French" : "English"}</span>
             </Button>
           </Link>
-          <Button variant="ghost" className="hidden sm:inline-flex">
-            {t("header.login")}
-          </Button>
-          <Button>
-            {t("header.getStarted")}
+          <Button asChild>
+            <a href={prefix + "/#contact"}>
+              {t("header.contact")}
+            </a>
           </Button>
         </div>
       </nav>
