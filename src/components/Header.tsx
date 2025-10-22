@@ -16,29 +16,29 @@ const Header = () => {
     : "/fr" + location.pathname;
 
   return (
-    <header className="w-full border-b bg-background">
-      <nav className="container mx-auto flex items-center justify-between px-6 py-4">
+    <header className="absolute top-0 left-0 right-0 z-50 w-full">
+      <nav className="container mx-auto flex items-center justify-between px-6 py-6">
         <Link to={prefix + "/"} className="flex items-center space-x-2">
-          <img src={logo} alt="MGH Tech Logo" className="h-10 w-10" />
-          <span className="text-xl font-semibold">MGH Tech</span>
+          <img src={logo} alt="MGH Tech Logo" className="h-10 w-10 brightness-0 invert" />
+          <span className="text-xl font-semibold text-white">MGH Tech</span>
         </Link>
         
         <ul className="hidden md:flex items-center space-x-8">
-          <li><a href={prefix + "/#services"} className="text-foreground hover:text-primary transition-colors">{t("header.services")}</a></li>
-          <li><a href={prefix + "/#solutions"} className="text-foreground hover:text-primary transition-colors">{t("header.solutions")}</a></li>
-          <li><Link to={prefix + "/about"} className="text-foreground hover:text-primary transition-colors">{t("header.about")}</Link></li>
-          <li><Link to={prefix + "/blog"} className="text-foreground hover:text-primary transition-colors">{t("header.blog")}</Link></li>
-          <li><a href={prefix + "/#contact"} className="text-foreground hover:text-primary transition-colors">{t("header.contact")}</a></li>
+          <li><a href={prefix + "/#services"} className="text-white/80 hover:text-white transition-colors">{t("header.services")}</a></li>
+          <li><a href={prefix + "/#solutions"} className="text-white/80 hover:text-white transition-colors">{t("header.solutions")}</a></li>
+          <li><Link to={prefix + "/about"} className="text-white/80 hover:text-white transition-colors">{t("header.about")}</Link></li>
+          <li><Link to={prefix + "/blog"} className="text-white/80 hover:text-white transition-colors">{t("header.blog")}</Link></li>
+          <li><a href={prefix + "/#contact"} className="text-white/80 hover:text-white transition-colors">{t("header.contact")}</a></li>
         </ul>
         
         <div className="flex items-center space-x-3">
           <Link to={otherLangPath}>
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
               <Globe className="w-4 h-4" />
               <span className="sr-only">Switch to {otherLang === "fr" ? "French" : "English"}</span>
             </Button>
           </Link>
-          <Button onClick={openChat}>
+          <Button onClick={openChat} variant="secondary" className="bg-white text-foreground hover:bg-white/90">
             {t("header.getInTouch")}
           </Button>
         </div>
