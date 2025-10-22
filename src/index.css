@@ -11,9 +11,9 @@ All colors MUST be HSL.
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     
-    --gradient-from: 220 40% 15%;
-    --gradient-via: 280 50% 30%;
-    --gradient-to: 30 50% 50%;
+    --gradient-from: 220 50% 10%;
+    --gradient-via: 230 60% 20%;
+    --gradient-to: 240 70% 15%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
