@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import heroWomanPhone from "@/assets/hero-woman-phone-enhanced.png";
+import heroGrowth from "@/assets/hero-growth-illustration.png";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -35,9 +35,9 @@ const Hero = () => {
         <div className="relative flex items-center justify-center">
           <div className="relative">
             <img
-              src={heroWomanPhone}
-              alt="Happy professional planning on phone"
-              className="w-full h-auto max-w-lg mx-auto"
+              src={heroGrowth}
+              alt="Business growth journey with technology and software solutions"
+              className="w-full h-auto max-w-2xl mx-auto"
             />
           </div>
         </div>
