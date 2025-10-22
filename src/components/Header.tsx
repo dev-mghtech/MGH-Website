@@ -3,9 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { Globe } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useChat } from "@/contexts/ChatContext";
 
 const Header = () => {
   const { language, t } = useLanguage();
+  const { openChat } = useChat();
   const location = useLocation();
   const prefix = language === "fr" ? "/fr" : "";
   const otherLang = language === "fr" ? "en" : "fr";
@@ -36,10 +38,8 @@ const Header = () => {
               <span className="sr-only">Switch to {otherLang === "fr" ? "French" : "English"}</span>
             </Button>
           </Link>
-          <Button asChild>
-            <a href={prefix + "/#contact"}>
-              {t("header.getInTouch")}
-            </a>
+          <Button onClick={openChat}>
+            {t("header.getInTouch")}
           </Button>
         </div>
       </nav>

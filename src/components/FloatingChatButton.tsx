@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,13 +6,14 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import InteractiveQuestionnaire from "@/components/InteractiveQuestionnaire";
+import { useChat } from "@/contexts/ChatContext";
 
 const FloatingChatButton = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, toggleChat } = useChat();
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      <Popover open={isOpen} onOpenChange={setIsOpen}>
+      <Popover open={isOpen} onOpenChange={toggleChat}>
         <PopoverTrigger asChild>
           <Button
             size="lg"

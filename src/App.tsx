@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { ChatProvider } from "./contexts/ChatContext";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -19,7 +20,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <LanguageProvider>
-          <Routes>
+          <ChatProvider>
+            <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
@@ -31,6 +33,7 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </ChatProvider>
         </LanguageProvider>
       </BrowserRouter>
     </TooltipProvider>
