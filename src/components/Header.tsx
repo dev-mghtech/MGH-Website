@@ -38,7 +38,7 @@ const Header = () => {
           </Link>
           <Button asChild>
             <a href={prefix + "/#contact"}>
-              {t("header.contact")}
+              {t("header.getInTouch")}
             </a>
           </Button>
         </div>
