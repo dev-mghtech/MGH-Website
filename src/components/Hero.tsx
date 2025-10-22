@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import heroWomanPhone from "@/assets/hero-woman-phone.png";
+import heroWomanPhone from "@/assets/hero-woman-phone-enhanced.png";
 
 const Hero = () => {
   const { t } = useLanguage();
