@@ -7,19 +7,28 @@ import Solutions from "@/components/Solutions";
 import Reviews from "@/components/Reviews";
 import Footer from "@/components/Footer";
 import FloatingChatButton from "@/components/FloatingChatButton";
+import { useFeatureFlag } from "@/hooks/useFeatureFlags";
 
 const Index = () => {
+  const showOfferBanner = useFeatureFlag("offerBanner");
+  const showHero = useFeatureFlag("hero");
+  const showServices = useFeatureFlag("services");
+  const showClients = useFeatureFlag("clients");
+  const showSolutions = useFeatureFlag("solutions");
+  const showReviews = useFeatureFlag("reviews");
+  const showFloatingChat = useFeatureFlag("floatingChatButton");
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <OfferCard />
-      <Hero />
-      <Services />
-      <Clients />
-      <Solutions />
-      <Reviews />
+      {showOfferBanner && <OfferCard />}
+      {showHero && <Hero />}
+      {showServices && <Services />}
+      {showClients && <Clients />}
+      {showSolutions && <Solutions />}
+      {showReviews && <Reviews />}
       <Footer />
-      <FloatingChatButton />
+      {showFloatingChat && <FloatingChatButton />}
     </div>
   );
 };

@@ -1,11 +1,13 @@
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useFeatureFlag } from "@/hooks/useFeatureFlags";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
   const prefix = language === "fr" ? "/fr" : "";
+  const showBlog = useFeatureFlag("blog");
 
   return (
     <footer id="contact" className="bg-foreground text-background">
@@ -72,11 +74,13 @@ const Footer = () => {
           <div>
             <h4 className="text-lg mb-6 text-muted">{t("footer.resources")}</h4>
             <ul className="space-y-3">
-              <li>
-                <a href={prefix + "/blog"} className="hover:text-primary transition-colors">
-                  {t("footer.blog")}
-                </a>
-              </li>
+              {showBlog && (
+                <li>
+                  <a href={prefix + "/blog"} className="hover:text-primary transition-colors">
+                    {t("footer.blog")}
+                  </a>
+                </li>
+              )}
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
                   {t("footer.docs")}

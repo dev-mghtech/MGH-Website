@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -21,12 +22,40 @@ const App = () => (
         <LanguageProvider>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route 
+              path="/blog" 
+              element={
+                <ProtectedRoute featureFlag="blog">
+                  <Blog />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/blog/:slug" 
+              element={
+                <ProtectedRoute featureFlag="blog">
+                  <BlogPost />
+                </ProtectedRoute>
+              } 
+            />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/fr" element={<Index />} />
-            <Route path="/fr/blog" element={<Blog />} />
-            <Route path="/fr/blog/:slug" element={<BlogPost />} />
+            <Route 
+              path="/fr/blog" 
+              element={
+                <ProtectedRoute featureFlag="blog">
+                  <Blog />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/fr/blog/:slug" 
+              element={
+                <ProtectedRoute featureFlag="blog">
+                  <BlogPost />
+                </ProtectedRoute>
+              } 
+            />
             <Route path="/fr/about" element={<AboutUs />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

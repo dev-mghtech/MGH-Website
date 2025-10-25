@@ -53,9 +53,9 @@ const translations = {
       getStarted: "Get Started",
     },
     offer: {
-      badge: "Limited Time Offer:",
-      text: "Get 20% off on all Discovery Phase Services. Book your free consultation today!",
-      cta: "Claim Offer",
+      badge: "☕ Free Coffee Chat:",
+      text: "Book your free 15-minute coffee chat to talk about your project and explore how we can help.",
+      cta: "Schedule Chat",
     },
     hero: {
       badge: "Technology consulting excellence",
@@ -227,9 +227,9 @@ const translations = {
       getStarted: "Commencer",
     },
     offer: {
-      badge: "Offre à Durée Limitée:",
-      text: "Obtenez 20% de réduction sur tous les Services de Phase de Découverte. Réservez votre consultation gratuite aujourd'hui!",
-      cta: "Profiter de l'Offre",
+      badge: "☕ Chat Café Gratuit:",
+      text: "Réservez votre chat café gratuit de 15 minutes pour parler de votre projet et explorer comment nous pouvons vous aider.",
+      cta: "Planifier un Chat",
     },
     hero: {
       badge: "Excellence en conseil technologique",

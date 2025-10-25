@@ -2,6 +2,7 @@ import { useState } from "react";
 import { X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { openCalendlyBooking } from "@/lib/calendly";
 
 const OfferCard = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -27,6 +28,7 @@ const OfferCard = () => {
             <Button
               size="sm"
               className="hidden sm:inline-flex"
+              onClick={() => openCalendlyBooking("offer-banner")}
             >
               {t("offer.cta")}
             </Button>
@@ -42,6 +44,7 @@ const OfferCard = () => {
         <Button
           size="sm"
           className="w-full mt-3 sm:hidden"
+          onClick={() => openCalendlyBooking("offer-banner-mobile")}
         >
           {t("offer.cta")}
         </Button>

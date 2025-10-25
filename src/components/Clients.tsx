@@ -1,20 +1,11 @@
-import clientLogo1 from "@/assets/client-logo-1.png";
-import clientLogo2 from "@/assets/client-logo-2.png";
-import clientLogo3 from "@/assets/client-logo-3.png";
-import clientLogo4 from "@/assets/client-logo-4.png";
-import clientLogo5 from "@/assets/client-logo-5.png";
-import clientLogo6 from "@/assets/client-logo-6.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Clients = () => {
   const { t } = useLanguage();
   const logos = [
-    clientLogo1,
-    clientLogo2,
-    clientLogo3,
-    clientLogo4,
-    clientLogo5,
-    clientLogo6,
+    { src: "/assets/images/cies/hangloose_logo_grey.svg", alt: "Hang Loose" },
+    { src: "/assets/images/cies/mokuna_logo.svg", alt: "Mokuna" },
+    { src: "/assets/images/cies/NicLaTaille1_carre-copy-d16559ea-1920w.webp", alt: "Nic La Taille" },
   ];
 
   return (
@@ -27,16 +18,16 @@ const Clients = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-4xl mx-auto">
           {logos.map((logo, index) => (
             <div
               key={index}
-              className="flex items-center justify-center p-6 bg-background rounded-lg hover:shadow-md transition-shadow"
+              className="flex items-center justify-center p-8 bg-background rounded-lg hover:shadow-md transition-shadow"
             >
               <img
-                src={logo}
-                alt={`Client ${index + 1}`}
-                className="w-full h-auto max-h-16 object-contain opacity-60 hover:opacity-100 transition-opacity"
+                src={logo.src}
+                alt={logo.alt}
+                className="w-full h-auto max-h-20 object-contain opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
               />
             </div>
           ))}
