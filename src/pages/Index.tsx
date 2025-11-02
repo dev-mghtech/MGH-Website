@@ -23,8 +23,8 @@ const Index = () => {
       <Header />
       {showOfferBanner && <OfferCard />}
       {showHero && <Hero />}
-      {showServices && <Services />}
       {showClients && <Clients />}
+      {showServices && <Services />}
       {showSolutions && <Solutions />}
       {showReviews && <Reviews />}
       <Footer />

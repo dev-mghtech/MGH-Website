@@ -16,7 +16,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const t = (key: string) => {
     const keys = key.split(".");
-    let value: any = translations[language];
+    let value = translations[language];
     
     for (const k of keys) {
       value = value?.[k];
@@ -58,9 +58,9 @@ const translations = {
       cta: "Schedule Chat",
     },
     hero: {
-      badge: "Technology consulting excellence",
-      title: "Transforming Business through Technology",
-      subtitle: "Our expert technology consulting solutions drive innovation, optimize operations, and accelerate digital transformation for businesses of all sizes.",
+      badge: "Book a free coffee chat with us ☕",
+      title: "Transforming Potential into Impactful Software",
+      subtitle: "MGH Tech partners with businesses to uncover opportunities, shape technology strategies, and deliver solutions that move you forward.",
       cta: "Start Your Journey",
       contact: "Contact Us",
       audience: {
@@ -70,20 +70,20 @@ const translations = {
       },
     },
     services: {
-      individualsTitle: "Individuals",
-      individualsDesc: "Personal technology consulting and career development guidance",
+      individualsTitle: "Entrepreneurs",
+      individualsDesc: "Personalized technology consulting and product strategy to help turn ideas into impactful products.",
       growingTitle: "Growing Companies",
-      growingDesc: "Scalable solutions to accelerate your business growth",
+      growingDesc: "Scalable solutions that streamline operations, strengthen products, and accelerate sustainable growth.",
       enterpriseTitle: "Enterprise",
-      enterpriseDesc: "Comprehensive technology transformation for large organizations",
+      enterpriseDesc: "Comprehensive technology transformation designed to enhance efficiency, innovation, and long-term success.",
     },
     clients: {
-      title: "Trusted by Industry Leaders",
-      subtitle: "We've partnered with leading organizations across various industries",
+      title: "In Good Company",
+      subtitle: "We've partnered with trusted organizations across various industries",
     },
     solutions: {
-      title: "Comprehensive Training and Consulting Solutions Tailored to Your Needs",
-      subtitle: "With a focus on individual attention, we are committed to delivering customized strategies, empowering your workforce, and guiding your business to sustainable growth and excellence",
+      title: "Technology-Driven Strategies Built Around Your Business Goals",
+      subtitle: "We deliver personalized strategies and hands-on guidance to empower your team and accelerate your business. Every solution is crafted around your unique goals — driving clarity, capability, and long-term success.",
       discoveryTitle: "Discovery Phase Services",
       discoveryDesc: "Evidence-based decisions backed by research:",
       discoveryPoint1: "Clear requirements and realistic expectations",
@@ -173,36 +173,20 @@ const translations = {
     },
     about: {
       title: "About Us",
-      subtitle: "Empowering businesses through innovative technology solutions and expert consulting services",
+      subtitle: "Small team. Big expertise. Real impact.",
       story: {
-        title: "Our Story",
-        paragraph1: "Founded with a vision to bridge the gap between technology and business success, MGH Tech has been at the forefront of digital transformation. We believe that every organization, regardless of size, deserves access to world-class technology consulting and solutions.",
-        paragraph2: "Our team of experienced professionals brings together decades of expertise in software development, IT strategy, and business process optimization. We're committed to delivering personalized solutions that drive real results for our clients.",
-      },
-      values: {
-        title: "Our Values",
-        value1: {
-          title: "Client-Centric",
-          description: "Your success is our success. We prioritize understanding your unique challenges and goals to deliver tailored solutions.",
-        },
-        value2: {
-          title: "Excellence",
-          description: "We maintain the highest standards in everything we do, from code quality to customer service.",
-        },
-        value3: {
-          title: "Innovation",
-          description: "We stay ahead of technology trends to provide cutting-edge solutions that give you a competitive advantage.",
-        },
-      },
-      mission: {
-        title: "Our Mission",
-        description: "To democratize access to enterprise-level technology solutions and empower businesses to thrive in the digital age through expert consulting, innovative software development, and personalized support.",
+        title: "Who We Are",
+        paragraph1: "We're a small team of software engineers who've worked in both fast-moving startups and some of the world's most successful tech companies. Every project we take on benefits from that dual perspective — combining startup agility with enterprise-grade standards.",
+        paragraph2: "At MGH Tech, we're highly selective about the projects we accept. We only partner with clients when we know we can bring genuine, industry-leading expertise and create meaningful impact. This focus allows us to give every project the depth, precision, and commitment it deserves.",
+        paragraph3: "Depending on your project's needs, we assemble the right expertise — whether from our core team or our network of trusted engineers and professionals — to deliver tailored, high-impact solutions.",
+        paragraph4: "When we truly believe in your vision, that's when our best work happens. Those are the projects that ignite our passion — where we become more than consultants, but a true extension of your team. We dive deep into your business, your users, and your goals to build software that creates real, measurable value and lasting success.",
+        paragraph5: "What drives us isn't just building great software — it's seeing it make a difference. When our solutions help you reach your goals, that's when we know we've done our job right.",
       },
     },
     footer: {
-      tagline: "Empowering businesses through innovative technology solutions",
+      tagline: "Transforming Potential into Impactful Software",
       company: "Company",
-      about: "About Us",
+      about: "About",
       careers: "Careers",
       contact: "Contact",
       legal: "Legal",
@@ -347,34 +331,18 @@ const translations = {
     },
     about: {
       title: "À Propos de Nous",
-      subtitle: "Donner aux entreprises les moyens d'agir grâce à des solutions technologiques innovantes et des services de conseil experts",
+      subtitle: "Petite équipe. Grande expertise. Impact réel.",
       story: {
-        title: "Notre Histoire",
-        paragraph1: "Fondée avec la vision de combler le fossé entre la technologie et le succès commercial, MGH Tech est à l'avant-garde de la transformation numérique. Nous croyons que chaque organisation, quelle que soit sa taille, mérite l'accès à des services de conseil technologique et des solutions de classe mondiale.",
-        paragraph2: "Notre équipe de professionnels expérimentés rassemble des décennies d'expertise en développement logiciel, stratégie informatique et optimisation des processus métier. Nous nous engageons à fournir des solutions personnalisées qui génèrent de vrais résultats pour nos clients.",
-      },
-      values: {
-        title: "Nos Valeurs",
-        value1: {
-          title: "Centré Client",
-          description: "Votre succès est notre succès. Nous priorisons la compréhension de vos défis et objectifs uniques pour fournir des solutions sur mesure.",
-        },
-        value2: {
-          title: "Excellence",
-          description: "Nous maintenons les plus hauts standards dans tout ce que nous faisons, de la qualité du code au service client.",
-        },
-        value3: {
-          title: "Innovation",
-          description: "Nous restons à l'avant-garde des tendances technologiques pour fournir des solutions de pointe qui vous donnent un avantage concurrentiel.",
-        },
-      },
-      mission: {
-        title: "Notre Mission",
-        description: "Démocratiser l'accès aux solutions technologiques de niveau entreprise et permettre aux entreprises de prospérer à l'ère numérique grâce à des conseils d'experts, un développement logiciel innovant et un support personnalisé.",
+        title: "Qui Nous Sommes",
+        paragraph1: "Nous sommes une petite équipe d'ingénieurs logiciels ayant travaillé dans des startups dynamiques et certaines des entreprises technologiques les plus prospères au monde. Chaque projet bénéficie de cette double perspective — combinant l'agilité des startups avec des standards de niveau entreprise.",
+        paragraph2: "Chez MGH Tech, nous sommes très sélectifs quant aux projets que nous acceptons. Nous ne nous associons qu'avec des clients lorsque nous savons que nous pouvons apporter une expertise réellement de pointe et créer un impact significatif. Cette concentration nous permet de donner à chaque projet la profondeur, la précision et l'engagement qu'il mérite.",
+        paragraph3: "Selon les besoins de votre projet, nous assemblons la bonne expertise — que ce soit de notre équipe principale ou de notre réseau d'ingénieurs et de professionnels de confiance — pour fournir des solutions sur mesure à fort impact.",
+        paragraph4: "Lorsque nous croyons vraiment en votre vision, c'est là que notre meilleur travail se produit. Ce sont les projets qui enflamment notre passion — où nous devenons plus que des consultants, mais une véritable extension de votre équipe. Nous plongeons profondément dans votre entreprise, vos utilisateurs et vos objectifs pour construire des logiciels qui créent une valeur réelle et mesurable et un succès durable.",
+        paragraph5: "Ce qui nous motive, ce n'est pas seulement de créer d'excellents logiciels — c'est de voir qu'ils font une différence. Quand nos solutions vous aident à atteindre vos objectifs, c'est là que nous savons que nous avons bien fait notre travail.",
       },
     },
     footer: {
-      tagline: "Donner aux entreprises les moyens d'agir grâce à des solutions technologiques innovantes",
+      tagline: "Transformer le Potentiel en Logiciels à Impact",
       company: "Entreprise",
       about: "À Propos",
       careers: "Carrières",

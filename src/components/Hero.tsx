@@ -26,7 +26,7 @@ const Hero = () => {
           <span className="text-foreground">
             {t("hero.title").split(' ').slice(0, -2).join(' ')}{' '}
           </span>
-          <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+          <span className="hero-gradient-text">
             {t("hero.title").split(' ').slice(-2).join(' ')}
           </span>
         </h1>

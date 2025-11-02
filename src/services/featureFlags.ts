@@ -21,6 +21,7 @@ export interface FeatureFlags {
     languageSwitcher: boolean;
     darkMode: boolean;
     analytics: boolean;
+    socialMedia: boolean;
   };
 }
 
@@ -28,7 +29,7 @@ export interface FeatureFlags {
 // Change these values to enable/disable features
 const featureFlags: FeatureFlags = {
   sections: {
-    offerBanner: true,
+    offerBanner: false,
     hero: true,
     services: true,
     clients: true,
@@ -42,6 +43,7 @@ const featureFlags: FeatureFlags = {
     languageSwitcher: true,
     darkMode: false,
     analytics: false,
+    socialMedia: false,
   },
 };
 // ========================================

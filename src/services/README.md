@@ -25,6 +25,7 @@ const featureFlags: FeatureFlags = {
     languageSwitcher: true,   // Show/hide language switcher
     darkMode: false,          // Enable dark mode (not implemented yet)
     analytics: false,         // Enable analytics (not implemented yet)
+    socialMedia: false,       // Show/hide social media icons in footer
   },
 };
 ```

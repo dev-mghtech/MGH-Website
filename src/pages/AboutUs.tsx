@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Users, Target, Heart } from "lucide-react";
+import { openCalendlyBooking } from "@/lib/calendly";
 
 const AboutUs = () => {
   const { t } = useLanguage();
@@ -25,50 +26,38 @@ const AboutUs = () => {
           {/* Story Section */}
           <section className="space-y-6">
             <h2 className="text-3xl font-bold">{t("about.story.title")}</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-muted-foreground leading-relaxed">
+            <div className="prose prose-lg max-w-none space-y-6">
+              <p className="text-muted-foreground leading-relaxed text-lg">
                 {t("about.story.paragraph1")}
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-lg">
                 {t("about.story.paragraph2")}
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                {t("about.story.paragraph3")}
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                {t("about.story.paragraph4")}
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                {t("about.story.paragraph5")}
               </p>
             </div>
           </section>
 
-          {/* Values Section */}
-          <section className="space-y-8">
-            <h2 className="text-3xl font-bold text-center">{t("about.values.title")}</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center space-y-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
-                  <Users className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold">{t("about.values.value1.title")}</h3>
-                <p className="text-muted-foreground">{t("about.values.value1.description")}</p>
-              </div>
-              <div className="text-center space-y-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
-                  <Target className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold">{t("about.values.value2.title")}</h3>
-                <p className="text-muted-foreground">{t("about.values.value2.description")}</p>
-              </div>
-              <div className="text-center space-y-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
-                  <Heart className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold">{t("about.values.value3.title")}</h3>
-                <p className="text-muted-foreground">{t("about.values.value3.description")}</p>
-              </div>
-            </div>
-          </section>
-
-          {/* Mission Section */}
-          <section className="bg-muted/50 rounded-2xl p-8 md:p-12 text-center space-y-4">
-            <h2 className="text-3xl font-bold">{t("about.mission.title")}</h2>
+          {/* CTA Section */}
+          <section className="bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10 rounded-2xl p-8 md:p-12 text-center space-y-6">
+            <h2 className="text-3xl md:text-4xl font-semibold">Ready to Build Something Great?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("about.mission.description")}
+              Let's discuss your project and see if we're the right fit. Book a free 15-minute coffee chat to explore how we can help bring your vision to life.
             </p>
+            <Button 
+              size="lg" 
+              className="px-8 py-6 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+              onClick={() => openCalendlyBooking("about-page")}
+            >
+              Schedule Your Free Call
+            </Button>
           </section>
         </div>
       </main>

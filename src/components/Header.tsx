@@ -21,13 +21,12 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto flex items-center justify-between px-6 py-4">
         <Link to={prefix + "/"} className="flex items-center space-x-2">
-          <img src={logo} alt="MGH Tech Logo" className="h-10 w-10" />
-          <span className="text-xl font-semibold tracking-tight">MGH Tech</span>
+          <img src={logo} alt="MGH Tech Logo" className="h-8 w-8" />
+          <span className="text-lg logo-text tracking-tight">MGH</span>
         </Link>
         
         <ul className="hidden md:flex items-center space-x-8">
           <li><a href={prefix + "/#solutions"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.services")}</a></li>
-          <li><a href={prefix + "/#solutions"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.solutions")}</a></li>
           <li><Link to={prefix + "/about"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.about")}</Link></li>
           {showBlog && (
             <li><Link to={prefix + "/blog"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.blog")}</Link></li>
