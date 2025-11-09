@@ -1,10 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { openCalendlyBooking } from "@/lib/calendly";
 
 const Hero = () => {
   const { t } = useLanguage();
+  
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById("services");
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 header-grid-background" />
@@ -43,7 +50,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             className="px-8 py-6 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-shadow"
-            onClick={() => openCalendlyBooking("hero")}
+            onClick={scrollToServices}
           >
             {t("hero.cta")}
           </Button>

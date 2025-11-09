@@ -82,8 +82,8 @@ const translations = {
       subtitle: "We've partnered with trusted organizations across various industries",
     },
     solutions: {
-      title: "Technology-Driven Strategies Built Around Your Business Goals",
-      subtitle: "We deliver personalized strategies and hands-on guidance to empower your team and accelerate your business. Every solution is crafted around your unique goals — driving clarity, capability, and long-term success.",
+      title: "Technology & Strategy Services",
+      subtitle: "We deliver personalized strategies and hands-on guidance to empower your team and accelerate your project or current business. Every solution is crafted around your unique goals — driving clarity, capability, and long-term success.",
       discoveryTitle: "Discovery Phase Services",
       discoveryDesc: "Evidence-based decisions backed by research:",
       discoveryPoint1: "Clear requirements and realistic expectations",
