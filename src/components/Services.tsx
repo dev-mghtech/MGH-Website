@@ -26,7 +26,7 @@ const Services = () => {
     <section id="services" className="mx-auto px-6 py-20 bg-muted/30 w-full">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-3xl font-semibold mb-4">{t("whoWeHelp.title")}</h2>
-        <p className="text-muted-foreground">
+        <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
           {t("whoWeHelp.subtitle")}
         </p>
       </div>
