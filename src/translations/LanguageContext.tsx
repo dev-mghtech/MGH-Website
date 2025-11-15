@@ -69,6 +69,22 @@ const translations = {
         marketing: "Marketing Agencies",
       },
     },
+    whoWeHelp: {
+      title: "Who We Help",
+      subtitle: "From early ideas to enterprise solutions — we help you move forward.",
+      clientType1: {
+          title: "Entrepreneurs",
+          description: "Personalized technology consulting and product strategy to help turn ideas into impactful products.",
+        },
+        clientType2: {
+          title: "Growing Companies",
+          description: "Scalable solutions that streamline operations, strengthen products, and accelerate sustainable growth.",
+        },
+        clientType3: {
+          title: "Enterprise",
+          description: "Comprehensive technology transformation designed to enhance efficiency, innovation, and long-term success.",
+        },
+    },
     services: {
       individualsTitle: "Entrepreneurs",
       individualsDesc: "Personalized technology consulting and product strategy to help turn ideas into impactful products.",
@@ -227,13 +243,22 @@ const translations = {
         marketing: "Agences Marketing",
       },
     },
-    services: {
-      individualsTitle: "Particuliers",
-      individualsDesc: "Conseil technologique personnel et orientation de développement de carrière",
-      growingTitle: "Entreprises en Croissance",
-      growingDesc: "Solutions évolutives pour accélérer la croissance de votre entreprise",
-      enterpriseTitle: "Grandes Entreprises",
-      enterpriseDesc: "Transformation technologique complète pour les grandes organisations",
+    whoWeHelp: {
+      title: "Qui aidons-nous?",
+      subtitle: "Que ce soit une idée entrepreneuriale ou une solution d’entreprise, nous vous aidons à avancer.",
+      clientType1: {
+        title: "Entrepreneurs",
+        description: "Conseils technologiques personnalisés et stratégie pour transformer vos idées de MVP à produit complet.",
+      },
+      clientType2: {
+        title: "Compagnies en croissance",
+        description: "Des solutions évolutives qui optimisent vos opérations, renforcent vos produits et accélèrent une croissance durable.",
+      },
+      clientType3: {
+        title: "Enterprise",
+        description: "Développement technologique conçu pour améliorer l’efficacité, stimuler l’innovation et assurer le succès à long terme.",
+      },
+
     },
     clients: {
       title: "La Confiance des Leaders de l'Industrie",

@@ -7,28 +7,28 @@ const Services = () => {
   const services = [
     {
       icon: Users,
-      title: t("services.individualsTitle"),
-      description: t("services.individualsDesc")
+      title: t("whoWeHelp.clientType1.title"),
+      description: t("whoWeHelp.clientType1.description")
     },
     {
       icon: Building2,
-      title: t("services.growingTitle"),
-      description: t("services.growingDesc")
+      title: t("whoWeHelp.clientType2.title"),
+      description: t("whoWeHelp.clientType2.description")
     },
     {
       icon: Briefcase,
-      title: t("services.enterpriseTitle"),
-      description: t("services.enterpriseDesc")
+      title: t("whoWeHelp.clientType3.title"),
+      description: t("whoWeHelp.clientType3.description")
     }
   ];
 
   return (
     <section id="services" className="mx-auto px-6 py-20 bg-muted/30 w-full">
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-3xl font-semibold mb-4">Who We Help</h2>
+        <h2 className="text-4xl md:text-3xl font-semibold mb-4">{t("whoWeHelp.title")}</h2>
         <p className="text-muted-foreground">
-        From early ideas to enterprise solutions — we help you move forward.
-          </p>
+          {t("whoWeHelp.subtitle")}
+        </p>
       </div>
 
       
