@@ -267,7 +267,7 @@ const translations = {
       subtitle: "Nous avons travaillé avec des organisations de premier plan dans divers secteurs",
     },
     solutions: {
-      title: "Solutions de Formation et de Conseil Complètes Adaptées à Vos Besoins",
+      title: "Services de Technologie et de Stratégie",
       subtitle: "En mettant l'accent sur l'attention individuelle, nous nous engageons à fournir des stratégies personnalisées, à responsabiliser votre main-d'œuvre et à guider votre entreprise vers une croissance et une excellence durables",
       discoveryTitle: "Services de Phase de Découverte",
       discoveryDesc: "Décisions fondées sur des preuves soutenues par la recherche :",

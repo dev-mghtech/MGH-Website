@@ -37,7 +37,7 @@ const featureFlags: FeatureFlags = {
     reviews: true,
     interactiveQuestionnaire: false,
     blog: false,
-    floatingChatButton: true,
+    floatingChatButton: false,
   },
   features: {
     languageSwitcher: true,
