@@ -8,7 +8,6 @@ export const openCalendlyBooking = (source?: string) => {
   // Add source tracking if provided
   const url = source ? `${calendlyUrl}&utm_source=${source}` : calendlyUrl;
   
-  // Navigate in the same window
-  window.location.href = url;
+  window.open(url, '_blank');
 };
 

@@ -20,7 +20,7 @@ const Hero = () => {
         {/* Badge */}
         <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-muted/50 rounded-full border border-border/50">
           <span className="px-2.5 py-1 bg-destructive text-destructive-foreground text-xs font-semibold rounded">
-            New!
+            {t("hero.badgeText")}
           </span>
           <span className="text-sm text-muted-foreground">
             {t("hero.badge")}

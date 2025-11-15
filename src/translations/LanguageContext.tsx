@@ -58,6 +58,7 @@ const translations = {
       cta: "Schedule Chat",
     },
     hero: {
+      badgeText: "New!",
       badge: "Book a free coffee chat with us ☕",
       title: "Transforming Potential into Impactful Software",
       subtitle: "MGH Tech partners with businesses to uncover opportunities, shape technology strategies, and deliver solutions that move you forward.",
@@ -232,6 +233,7 @@ const translations = {
       cta: "Planifier un Chat",
     },
     hero: {
+      badgeText: "Nouveau!",
       badge: "Planifie un appel découverte gratuit avec nous ☕",
       title: "Transformez votre Potentiel en Solution Logicielle",
       subtitle: "Nos solutions expertes de conseil technologique stimulent l'innovation, optimisent les opérations et accélèrent la transformation numérique pour les entreprises de toutes tailles.",
