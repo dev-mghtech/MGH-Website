@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 import { blogPostsFr } from "@/data/blogPostsFr";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/translations/LanguageContext";
 
 const Blog = () => {
   const { language, t } = useLanguage();

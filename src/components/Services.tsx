@@ -1,5 +1,5 @@
 import { Users, Building2, Briefcase } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/translations/LanguageContext";
 
 const Services = () => {
   const { t } = useLanguage();

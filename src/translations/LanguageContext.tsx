@@ -45,7 +45,7 @@ const translations = {
     header: {
       services: "Services",
       solutions: "Solutions",
-      about: "About",
+      about: "About MGH",
       blog: "Blog",
       contact: "Contact",
       getInTouch: "Get in touch",
@@ -211,15 +211,15 @@ const translations = {
       getStarted: "Commencer",
     },
     offer: {
-      badge: "☕ Chat Café Gratuit:",
+      badge: "Planifie un appel découverte gratuit avec nous ☕",
       text: "Réservez votre chat café gratuit de 15 minutes pour parler de votre projet et explorer comment nous pouvons vous aider.",
       cta: "Planifier un Chat",
     },
     hero: {
-      badge: "Excellence en conseil technologique",
-      title: "Transformer les Entreprises par la Technologie",
+      badge: "Planifie un appel découverte gratuit avec nous ☕",
+      title: "Transformez votre Potentiel en Solution Logicielle",
       subtitle: "Nos solutions expertes de conseil technologique stimulent l'innovation, optimisent les opérations et accélèrent la transformation numérique pour les entreprises de toutes tailles.",
-      cta: "Commencez Votre Parcours",
+      cta: "Commencez votre parcours",
       contact: "Contactez-Nous",
       audience: {
         entrepreneur: "Entrepreneurs",
@@ -237,7 +237,7 @@ const translations = {
     },
     clients: {
       title: "La Confiance des Leaders de l'Industrie",
-      subtitle: "Nous nous sommes associés à des organisations de premier plan dans divers secteurs",
+      subtitle: "Nous avons travaillé avec des organisations de premier plan dans divers secteurs",
     },
     solutions: {
       title: "Solutions de Formation et de Conseil Complètes Adaptées à Vos Besoins",

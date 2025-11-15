@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Compass, UserCheck, Code } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/translations/LanguageContext";
 
 const Solutions = () => {
   const { t } = useLanguage();

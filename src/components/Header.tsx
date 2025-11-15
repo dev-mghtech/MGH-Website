@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { Globe } from "lucide-react";
 import logo from "@/assets/logo.png";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/translations/LanguageContext";
 import { openCalendlyBooking } from "@/lib/calendly";
 import { useFeatureFlag } from "@/hooks/useFeatureFlags";
 
@@ -31,7 +31,6 @@ const Header = () => {
           {showBlog && (
             <li><Link to={prefix + "/blog"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.blog")}</Link></li>
           )}
-          <li><a href={prefix + "/#contact"} className="text-foreground hover:text-primary transition-colors font-medium">{t("header.contact")}</a></li>
         </ul>
         
         <div className="flex items-center space-x-3">

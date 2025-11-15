@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/translations/LanguageContext";
 import { openCalendlyBooking } from "@/lib/calendly";
 
 const OfferCard = () => {

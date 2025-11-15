@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/translations/LanguageContext";
 import { useFeatureFlag } from "@/hooks/useFeatureFlags";
 import { openCalendlyBooking } from "@/lib/calendly";
 import logo from "@/assets/logo.png";
