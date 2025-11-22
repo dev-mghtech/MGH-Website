@@ -166,9 +166,9 @@ const translations = {
       title: "What Our Clients Say",
       subtitle: "Don't just take our word for it - hear from the businesses we've helped transform",
       review1: {
-        name: "Sarah Johnson",
-        role: "CEO, TechStart Inc.",
-        content: "MGH Tech transformed our business with their innovative solutions. Their team's expertise and dedication exceeded all expectations.",
+        name: "Antoine Levesque",
+        role: "Founder of Cadee, Founder of SNDCHECK",
+        content: "Thom is one of the reasons Cadee exists today. Not only because of his 360 skills (even though he has a ton of them) but mostly because he was the first person to really take the time to understand my situation and where I wanted to go. Thom, he's more than a dev: he's someone who sits with you in the chaos and helps you get your bearings back.",
       },
       review2: {
         name: "Michael Chen",
@@ -246,7 +246,7 @@ const translations = {
       },
     },
     whoWeHelp: {
-      title: "Qui aidons-nous?",
+      title: "Pour qui sont nos services et solutions ?",
       subtitle: "Que ce soit une idée entrepreneuriale ou une solution d’entreprise, nous vous aidons à avancer.",
       clientType1: {
         title: "Entrepreneurs",
@@ -331,16 +331,16 @@ const translations = {
       },
     },
     reviews: {
-      title: "Ce Que Disent Nos Clients",
+      title: "Ce que disent nos clients",
       subtitle: "Ne nous croyez pas sur parole - écoutez les entreprises que nous avons aidées à se transformer",
       review1: {
-        name: "Sarah Johnson",
-        role: "PDG, TechStart Inc.",
-        content: "MGH Tech a transformé notre entreprise avec ses solutions innovantes. L'expertise et le dévouement de leur équipe ont dépassé toutes les attentes.",
+        name: "Antoine Levesque",
+        role: "Fondateur de Cadee, Fondateur de SNDCHECK",
+        content: "Thom est une des raisons pour lesquelles Cadee existe aujourd’hui. Pas seulement pour ses skills 360 (même s’il en a une tonne) mais surtout parce qu’il a été la première personne à vraiment prendre le temps de comprendre ma situation et où je voulais aller. Thom, c’est plus qu’un dev : c’est quelqu’un qui s’assoit avec toi dans le chaos et t’aide à remettre de l’ordre.",
       },
       review2: {
-        name: "Michael Chen",
-        role: "CTO, DataFlow Systems",
+        name: "James Braken",
+        role: "Entrepreneur",
         content: "Service et support exceptionnels. Ils ont livré une solution robuste qui s'est parfaitement adaptée à nos besoins croissants.",
       },
       review3: {

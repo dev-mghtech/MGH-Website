@@ -12,14 +12,14 @@ const Reviews = () => {
       role: t("reviews.review1.role"),
       content: t("reviews.review1.content"),
       rating: 5,
-      initials: "SL",
+      initials: "AL",
     },
     {
       name: t("reviews.review2.name"),
       role: t("reviews.review2.role"),
       content: t("reviews.review2.content"),
       rating: 5,
-      initials: "MC",
+      initials: "JB",
     },
     {
       name: t("reviews.review3.name"),
@@ -45,17 +45,18 @@ const Reviews = () => {
             <Card key={index} className="bg-white shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6 space-y-4">
                 {/* Star Rating */}
-                <div className="flex gap-1">
+                {/* <div className="flex gap-1">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                   ))}
-                </div>
+                </div> */}
                 
                 {/* Testimonial Text */}
-                <p className="text-foreground leading-relaxed text-sm">
-                  {review.content}
-                </p>
-                
+                <div>
+                  <p className="text-foreground leading-relaxed text-sm">
+                    {review.content}
+                  </p>
+                </div>  
                 {/* Author Info */}
                 <div className="flex items-center gap-3 pt-2">
                   <Avatar className="h-10 w-10">
