@@ -118,7 +118,7 @@ const translations = {
       softwareTitle: "Software Development Service",
       softwareSubtitle: "From Idea to Launch – We Build Your Vision End-to-End",
       softwareDesc: "Stop juggling multiple vendors and fragmented teams. MGH Tech delivers complete software development services—taking your project from initial concept through launch and beyond, all under one roof.",
-      softwareWho: "Full-Cycle Development You Can Trust",
+      softwareWho: "Who This Is For",
       softwareWhoDesc: "Whether you're launching a new product, digitizing your business, or scaling an existing platform, we handle every aspect of software development so you can focus on growing your business.",
     },
     questionnaire: {
@@ -286,7 +286,7 @@ const translations = {
       softwareTitle: "Service de Développement Logiciel",
       softwareSubtitle: "De l'Idée au Lancement – Nous Construisons Votre Vision de Bout en Bout",
       softwareDesc: "Arrêtez de jongler avec plusieurs fournisseurs et équipes fragmentées. MGH Tech offre des services complets de développement logiciel—menant votre projet du concept initial au lancement et au-delà, tout sous un même toit.",
-      softwareWho: "Développement en Cycle Complet en Qui Vous Pouvez Avoir Confiance",
+      softwareWho: "Pour Qui",
       softwareWhoDesc: "Que vous lanciez un nouveau produit, numérisiez votre entreprise ou développiez une plateforme existante, nous gérons tous les aspects du développement logiciel afin que vous puissiez vous concentrer sur la croissance de votre entreprise.",
     },
     questionnaire: {

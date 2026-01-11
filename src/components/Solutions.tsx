@@ -43,7 +43,7 @@ const Solutions = () => {
             </p>
           </div>
           
-          <Button variant="outline" size="sm" className="group w-full">
+          <Button size="sm" className="group w-full">
             {t("solutions.learnMore")}
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
@@ -72,8 +72,9 @@ const Solutions = () => {
             </p>
           </div>
           
-          <Button size="sm" className="w-full">
+          <Button size="sm" className="group w-full">
             {t("solutions.learnMore")}
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </Card>
 
@@ -100,8 +101,9 @@ const Solutions = () => {
             </p>
           </div>
           
-          <Button size="sm" className="w-full">
+          <Button size="sm" className="group w-full">
             {t("solutions.learnMore")}
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </Card>
       </div>
